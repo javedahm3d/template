@@ -1,0 +1,11 @@
+import aboutUs from "./screens/about"
+import heroPage from "./screens/hero"
+
+export default function Home() {
+  return (
+    <main className="">
+      {heroPage()}
+      {aboutUs()}
+    </main>
+  )
+}

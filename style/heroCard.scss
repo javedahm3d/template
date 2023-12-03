@@ -1,0 +1,52 @@
+.heroCard{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 120px;
+    height: 120px;
+    background: rgba(123, 122, 122, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(71, 71, 71, 0.37);
+    backdrop-filter: blur( 0.5px );
+    -webkit-backdrop-filter: blur( 0.5px );
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+
+    &:hover{
+        background: rgba(63, 63, 63, 0.5); ;
+        backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+}
+.imageConatiner{
+    width: 60%;
+    height: 60%;
+    position: relative;
+
+}
+
+.cardName{
+    color: white;
+} 
+
+
+@media (max-width:550px){
+
+    .heroCard{
+        width: 90px;
+        height: 90px;
+    }
+
+}
+
+@media (max-width:420px){
+
+    .heroCard{
+        width: 80px;
+        height: 80px;
+    }
+
+}
