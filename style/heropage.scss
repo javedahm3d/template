@@ -7,7 +7,7 @@
 }
 
 video{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: fixed;
     object-fit: cover;
@@ -20,7 +20,7 @@ video{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-image: linear-gradient(rgba(44, 35, 41, 0.8), rgba(59, 67, 55, 0.5));
     z-index: -1;
@@ -37,9 +37,8 @@ video{
     align-items: center;
     text-align: center;
     z-index: 2;
-    width: 100vw;
     height: 100vh;
-    // background-image: linear-gradient(rgba(44, 35, 41, 0.8) , rgba(59, 67, 55, 0.5));
+    width: 100%;
 }
 
 .heroTitle{
