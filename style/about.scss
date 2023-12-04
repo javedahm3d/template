@@ -13,17 +13,36 @@
     padding: 20px;
 }
 
+
+
 .aboutUsTile{
     font-family: 'Nunito', sans-serif;
     font-size: 40px;
     font-weight: 500;
     padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.redline{
+    width: 6vw;
+    height: 5px;
+    background-color: red;
+    margin: 0 15px;
+}
+
 
 .aboutdesc{
     font-size: 20px;
     font-weight: 300;
     padding : 0 30px;
+}
+
+@media (max-width:1020px){
+    .redline{
+        visibility: hidden;
+    }
 }
 
 
