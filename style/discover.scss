@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
 
-.aboutUsSection{
+.discoverSection{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,46 +8,40 @@
     text-align: center;
     width: 100%;
     background-color: white;
-    border-top-right-radius: 60px;
-    border-top-left-radius: 60px;
     padding: 20px;
 }
 
 
 
-.aboutUsTile{
+.discoverTile{
     font-family: 'Nunito', sans-serif;
     font-size: 40px;
     font-weight: 500;
     padding: 20px 0px;
+    padding-bottom: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.redline{
-    width: 6vw;
-    height: 5px;
-    background-color: red;
-    margin: 0 15px;
-}
+
+// moved to global.css file 
+// .redline{
+//     width: 6vw;
+//     height: 5px;
+//     background-color: red;
+//     margin: 0 15px;
+// }
 
 
-.aboutdesc{
+.discoverdesc{
     font-size: 20px;
     font-weight: 300;
-    padding : 0 30px;
+    padding : 0 10px;
 }
-
-@media (max-width:1020px){
-    .redline{
-        visibility: hidden;
-    }
-}
-
 
 @media (max-width:850px){
-    .aboutUsTile{
+    .discoverTile{
         font-size: 30px;
         padding: 10px 0px;
     }
@@ -60,7 +54,7 @@
 }
 
 @media (max-width:650px){
-    .aboutUsTile{
+    .discoverTile{
         font-size: 22px;
         padding: 10px 0px;
     }

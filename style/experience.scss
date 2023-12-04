@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+
+.experienceUsSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    border-top-right-radius: 60px;
+    border-top-left-radius: 60px;
+    padding: 20px;
+}
+
+
+
+.experienceUsTile{
+    font-family: 'Nunito', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    padding: 20px 0px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// moved to global.css file 
+// .redline{
+//     width: 6vw;
+//     height: 5px;
+//     background-color: red;
+//     margin: 0 15px;
+// }
+
+
+.experiencedesc{
+    font-size: 18px;
+    font-weight: 300;
+    width: 50vw;
+}
+
+.experienceCardConatiners{
+    padding: 40px 0;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+@media (max-width:1400px){
+    .experiencedesc{
+        width: 80vw;
+    }
+    
+}
+
+@media (max-width:900px){
+    .experienceUsTile{
+        font-size: 30px;
+        padding: 10px 0px;
+    }
+    
+    .experiencedesc{
+        font-size: 14px;
+        padding : 0 10px;
+    }
+
+    .experienceCardConatiners{
+        width: 96%;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+}
+
+@media (max-width:600px){
+    .experienceUsTile{
+        font-size: 25px;
+        padding: 10px 0px;
+    }
+    
+    .experiencedesc{
+        width: 90vw;
+    }
+
+    .experienceCardConatiners{
+        width: 98%;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+}
