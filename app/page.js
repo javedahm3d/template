@@ -1,3 +1,4 @@
+import servicesscroll from "./components/servicesInfiniteScroll"
 import aboutUs from "./screens/about"
 import heroPage from "./screens/hero"
 
@@ -6,6 +7,7 @@ export default function Home() {
     <main className="">
       {heroPage()}
       {aboutUs()}
+      {servicesscroll()}
     </main>
   )
 }

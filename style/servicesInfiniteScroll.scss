@@ -1,0 +1,87 @@
+.infiniteScrollContainer{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;  
+    padding: 5vh 0;
+}
+
+.infiniteScrollInnerContainer{
+    width: 90%;
+    overflow: hidden;
+}
+
+.slide{
+    width: 200%;
+    display: flex;
+    justify-content: center;
+}
+
+.logoSlideInner{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    animation: 30s slide infinite linear;
+}
+
+.logoSlideInner{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    animation: 30s slide infinite linear;
+
+}
+
+.slideicon{
+    position: relative;
+    width: 75px;
+    height: 75px;
+}
+
+.slide:hover .logoSlideInner {
+    animation-play-state: paused;
+}
+
+@keyframes slide{
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+
+@media (max-width:1200px){
+    .slideicon{
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media (max-width:900px){
+    .slideicon{
+        width: 50px;
+        height: 50px;
+    }
+    .infiniteScrollInnerContainer{
+        width: 98%;
+    }
+}
+
+
+@media (max-width:600px){
+    .slideicon{
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width:450px){
+    .slideicon{
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
