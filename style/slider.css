@@ -202,6 +202,8 @@
     background-color: #bac383;
   }
 
+
+
   /* Media Query for 4k Screen  */
   @media (max-width: 2600px) and (min-width: 1801px)  {
     .item .content {

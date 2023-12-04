@@ -11,6 +11,7 @@ export default function discover(){
             </h1>
             <p className="discoverdesc" >"Discover Nirvana A Retreat Like No Other"
             </p>
+
         </div>
     )
 
