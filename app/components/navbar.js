@@ -118,12 +118,13 @@ export default function Navbar(){
                   </div>
                   <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
                       <Link className="flex items-center"  href="#hero">
-                      <div style={{ backgroundImage: `url(${Logo.src})` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>                          <span className='mx-3' ><b>CodeMonkey</b></span>
+                      <div style={{ backgroundImage: `url(${Logo.src})` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>
+                      <span className={navbar?'mx-3 text-gray-700':'mx-3 text-white'} ><b>CodeMonkey</b></span>
                       </Link>
                   </div>
                   <div className="flex">
                       <div className="hidden xl:flex">
-                          <Link href="#ethicssection"  className="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+                          <Link href="#ethicssection"  className={navbar?"flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out":"flex px-5 items-center py-6 text-sm leading-5 text-white focus:outline-none transition duration-150 ease-in-out"}>
                               <span className="mr-2">
                                   <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-grid" width={50} height={30} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                       <path stroke="none" d="M0 0h24v24H0z" />
@@ -135,7 +136,7 @@ export default function Navbar(){
                               </span>
                               About Us
                           </Link>
-                          <Link href="#ourservicessection" className="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+                          <Link href="#ourservicessection" className={navbar?"flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out":"flex px-5 items-center py-6 text-sm leading-5 text-white focus:outline-none transition duration-150 ease-in-out"}>
                               <span className="mr-2">
                                   <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-puzzle" width={50} height={30} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                       <path stroke="none" d="M0 0h24v24H0z" />
@@ -144,7 +145,7 @@ export default function Navbar(){
                               </span>
                               Services
                           </Link>
-                          <Link href="#project"  className="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+                          <Link href="#project"  className={navbar?"flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out":"flex px-5 items-center text-white py-6 text-sm leading-5 text-whitefocus:outline-none transition duration-150 ease-in-out"}>
                               <span className="mr-2">
                                   <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-compass" width={50} height={30} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                       <path stroke="none" d="M0 0h24v24H0z" />
@@ -154,7 +155,7 @@ export default function Navbar(){
                               </span>
                               Projects
                           </Link>
-                          <div className="flex cursor-pointer px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out" onClick={() => document.getElementById("my_modal_2").showModal()}>
+                          <div className={navbar?"flex cursor-pointer px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out":"flex cursor-pointer px-5 items-center py-6 text-sm leading-5 text-white focus:outline-none transition duration-150 ease-in-out"} onClick={() => document.getElementById("my_modal_2").showModal()}>
                               <span className="mr-2">
                                   <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-code" width={50} height={30} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                       <path stroke="none" d="M0 0h24v24H0z" />
@@ -176,11 +177,11 @@ export default function Navbar(){
           <div className={navbar? "bg-white drop-shadow-md py-4 px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40" : "py-4 px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40"}>
                        <Link className="flex items-center"  href="#hero" >
                        <div style={{ backgroundImage: `url(${Logo.src})` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>
-                          <span className='mx-3' ><b>CodeMonkey</b></span>
+                          <span className={navbar?'mx-3 text-gray-700':'mx-3 text-white'} ><b>CodeMonkey</b></span>
                       </Link>
               <div className="flex items-center">
                  
-                  <div id="menu" className="text-gray-800" onClick={() => setShow(!show)}>
+                  <div id="menu" className={navbar?"text-gray-700":"text-white"} onClick={() => setShow(!show)}>
                       {show ? (
                           ""
                           ) : (
