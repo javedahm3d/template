@@ -4,6 +4,7 @@ import discover from "./screens/discover"
 import experiencePage from "./screens/experience"
 import Slider from "./components/slider";
 import Identity from "./screens/identity";
+import carousel from "./components/carousel";
 
 export default function Home() {
   return (
@@ -12,7 +13,11 @@ export default function Home() {
       {experiencePage()}
       {discover()}
       {Slider()}
+      <div className="identityandReviewsectionbg">
       {Identity()}
+      {carousel()}
+
+      </div>
     </main>
   )
 }
