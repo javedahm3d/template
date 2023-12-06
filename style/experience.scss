@@ -8,8 +8,8 @@
     text-align: center;
     width: 100%;
     background-color: white;
-    border-top-right-radius: 60px;
-    border-top-left-radius: 60px;
+    border-top-right-radius: 8vw;
+    border-top-left-radius: 8vw;
     padding: 20px;
 }
 
@@ -77,6 +77,12 @@
 }
 
 @media (max-width:600px){
+    .experienceUsSection{
+
+        border-top-right-radius: 10vw;
+        border-top-left-radius: 10vw;
+
+    }
     .experienceUsTile{
         font-size: 25px;
         padding: 10px 0px;
