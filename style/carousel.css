@@ -6,3 +6,11 @@
   align-items: center;
   padding: 40px;
 }
+
+
+@media (max-width:380px){
+
+  .carousel{
+    padding: 30px;
+  }
+}

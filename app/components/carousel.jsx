@@ -41,35 +41,51 @@ export default function carousel(){
         prevArrow: <SamplePrevArrow />,
     
         responsive: [
+          
           {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true
-            }
-          },
-          {
-            breakpoint: 600,
+            breakpoint: 800,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
-              initialSlide: 0
+              infinite: true,
+              dots: true,
+              autoplay: false,
+              autoplaySpeed: 4000,
             }
-          },
-          {
-            breakpoint: 480,
+            },
+     
+        {breakpoint: 600,
             settings: {
-              slidesToShow: 1,
-              slidesToScroll: 0
+              slidesToShow: 1.4,
+              slidesToScroll: 1.4,
+              infinite: true,
+              dots: true,
+              autoplay: false,
+              autoplaySpeed: 4000,
             }
-          }
-        ]
+            },
+
+            {breakpoint: 450,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              
+              }
+              },
+
+              {breakpoint: 350,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                
+                }
+                },
+          
+        ],
     }
         return (
 
-            <div className="carousel mx-16">
+            <div className="carousel">
                 <Slider {...settings}>{
                 data.map((d , index)=>(
                 card()
