@@ -54,32 +54,38 @@ export default function carousel(){
             }
             },
      
-        {breakpoint: 600,
+        {breakpoint: 550,
             settings: {
-              slidesToShow: 1.4,
-              slidesToScroll: 1.4,
+              centerMode: false,
+              slidesToShow: 2,
+              slidesToScroll: 1,
               infinite: true,
               dots: true,
               autoplay: false,
               autoplaySpeed: 4000,
             }
-            },
-
-            {breakpoint: 450,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-              
-              }
-              },
-
-              {breakpoint: 350,
+          },
+          {breakpoint: 450,
                 settings: {
+                  centerMode: true,
                   slidesToShow: 1,
                   slidesToScroll: 1,
                 
-                }
-                },
+           }
+          },
+          {breakpoint: 350,
+            settings: {
+              dots: true,
+              infinite: true,
+              centerMode: true,
+              className: "center",
+              centerPadding: "10px",
+              speed: 500,
+              slidesToShow: 1,
+              slidesToScroll: 1
+            
+       }
+      },
           
         ],
     }
