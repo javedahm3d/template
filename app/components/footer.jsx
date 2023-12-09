@@ -6,22 +6,22 @@ export default function footer(){
 
     return(
         <div className="footer">
-            <div className="contactussection">
+            <form className="contactussection">
             <div className="contactbg">
             <Image src="/worldmap.jpg" alt="world map Img"  layout="fill" objectFit="cover"/>
             </div>
                 <div className="contactusTitle">Contact Us Now</div>
                 <div className="contactinfo">
-                    <textarea className="contactinfoitem" id="name" type="text" placeholder="name" wrap="off"></textarea>
-                    <textarea className="contactinfoitem" id="email" type="text" placeholder="email id" wrap="off"></textarea>
-                    <textarea className="contactinfoitem" id="phone" type="text" placeholder="phone no" wrap="off"></textarea>
+                    <textarea className="contactinfoitem" id="name" type="text" placeholder="name*" wrap="off" required></textarea>
+                    <textarea className="contactinfoitem" id="email" type="text" placeholder="email id*" wrap="off" required></textarea>
+                    <textarea className="contactinfoitem" id="phone" type="text" placeholder="phone no" wrap="off" ></textarea>
                     <textarea className="contactinfoitem" id="location" type="text" placeholder="location" wrap="off"></textarea>
                 </div>
                 <div className="contactmessage">
-                    <textarea className="message" type="text" placeholder="enter message here ..."></textarea>
+                    <textarea className="message" type="text" placeholder="enter message here ..." required></textarea>
                     <button className="submitButton">send now</button>
                 </div>
-            </div>
+            </form>
             <div className="footersection">
                 <div className="footerbody">
 
