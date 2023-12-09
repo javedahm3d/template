@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image"
-import Logo from '@/public/vercel.svg'
+import Logo from '@/public/logo.png'
+import Logo_black from '@/public/logo_black.png'
 import React, { useState } from 'react';
 import "@/style/navbar.scss"
 import Link from "next/link";
@@ -80,7 +81,7 @@ export default function Navbar(){
                                   <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
                                       <div className="flex items-center">
                                           <div className="w-12 cursor-pointer flex text-sm border-2 border-transparent rounded focus:outline-none focus:border-white transition duration-150 ease-in-out">
-                                          <div style={{ backgroundImage: `url(${Logo.src})` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>                                          </div>
+                                          <div style={{ backgroundImage: `url(${navbar? Logo_black.src : Logo.src })` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>                                          </div>
                                           <p className="text-sm ml-2 cursor-pointer">Jane Doe</p>
                                           <div className="sm:ml-2 text-white relative">
                                               <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-chevron-down cursor-pointer" width={50} height={30} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -118,7 +119,7 @@ export default function Navbar(){
                   </div>
                   <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
                       <Link className="flex items-center"  href="#hero">
-                      <div style={{ backgroundImage: `url(${Logo.src})` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>
+                      <div style={{ backgroundImage: `url(${navbar? Logo_black.src : Logo.src })` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>
                       <span className={navbar?'mx-3 text-gray-700':'mx-3 text-white'} ><b>CodeMonkey</b></span>
                       </Link>
                   </div>
@@ -176,7 +177,7 @@ export default function Navbar(){
       <nav>
           <div className={navbar? "bg-white drop-shadow-md py-4 px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40" : "py-4 px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40"}>
                        <Link className="flex items-center"  href="#hero" >
-                       <div style={{ backgroundImage: `url(${Logo.src})` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>
+                       <div style={{ backgroundImage: `url(${navbar? Logo_black.src : Logo.src })` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>
                           <span className={navbar?'mx-3 text-gray-700':'mx-3 text-white'} ><b>CodeMonkey</b></span>
                       </Link>
               <div className="flex items-center">
@@ -205,7 +206,7 @@ export default function Navbar(){
                               <div className="mt-6 flex w-full items-center justify-between">
                                   <div className="flex items-center justify-between w-full">
                                       <Link className="flex items-center cursor-pointer" href="#hero" onClick={() => setShow(!show)}>
-                                      <div style={{ backgroundImage: `url(${Logo.src})` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>
+                                      <div style={{ backgroundImage: `url(${navbar? Logo_black.src : Logo.src })` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>
                                         <span className='mx-3' ><b>CodeMonkey</b></span>
                                       </Link>
                                       <div id="cross" className="text-gray-800" onClick={() => setShow(!show)}>
