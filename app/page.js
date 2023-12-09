@@ -5,6 +5,7 @@ import experiencePage from "./screens/experience"
 import Slider from "./components/slider";
 import Identity from "./screens/identity";
 import carousel from "./components/carousel";
+import footer from "./components/footer";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <div className="identityandReviewsectionbg">
       {Identity()}
       {carousel()}
-
+      {footer()}
       </div>
     </main>
   )
