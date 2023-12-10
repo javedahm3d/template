@@ -7,17 +7,15 @@ import "@/style/navbar.scss"
 import Link from "next/link";
 
 
-
-export default function Navbar(){
+export default function Navbar({setNavbarvalue=false}){
   const [show, setShow] = useState(null);
-  const [navbar, setNavbar] = useState(false);
+  const [navbar, setNavbar] = useState(setNavbarvalue);
   const changeNavrbarColor = () =>{
     if(window.scrollY >= 80){
         setNavbar(true);
     }
     else{
-        setNavbar(false);
-
+        setNavbar(setNavbarvalue);
     }
   }
 

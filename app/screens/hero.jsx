@@ -1,5 +1,6 @@
 import '@/style/heropage.scss'
 import heroCard from '../components/heroCard'
+import Link from 'next/link'
 
 export default function heroPage(){
     return (
@@ -27,10 +28,13 @@ export default function heroPage(){
                     {heroCard('/price.png' , 'deals')}
                     
                 </div>
-
-                <button className='button'>
+               
+               <Link href="../listing">
+               <button className='button'>
                     Book Now
                 </button>
+               </Link>
+                
                 
             </div>
         </section>
