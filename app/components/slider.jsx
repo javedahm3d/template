@@ -116,6 +116,11 @@ const Slider = () => {
           <button id="prev" className='carouselLeft'><FaAngleLeft style={{margin: 'auto'}}/></button>
           <button id="next" className='carouselRight'><FaAngleRight style={{margin: 'auto'}}/></button>
         </div>
+        <div className='viewAll'>
+            <div className='flex  flex-row'>
+            <button>View all</button> 
+            </div>
+        </div>
       </div>
     );
   };
