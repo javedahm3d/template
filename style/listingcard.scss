@@ -99,6 +99,8 @@
 }
 
 .listingcardbutton{
+    display: flex;
+    justify-content: center;
     width: 120px;
     font-size: 1.2vw;
     font-weight: 500;

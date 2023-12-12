@@ -3,9 +3,10 @@ import { TfiLocationPin } from "react-icons/tfi";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { MdOutlineBedroomChild } from "react-icons/md";
 import Image from 'next/image'
+import Link from 'next/link';
 
 // {image, name , price , location , rooms}
-export default function listingcard({image, name , price , location , rooms , labels}){
+export default function listingcard({image, name , price , location , rooms , labels,id}){
     return(
         <div className="listingcard">
             <div className="listingcardImageContainer">
@@ -30,7 +31,7 @@ export default function listingcard({image, name , price , location , rooms , la
                 <p className='listingcardinfo'><MdOutlineBedroomChild /><span>{rooms} bedroom</span></p>
                 <p className='listingcardinfo'><FaIndianRupeeSign />{price}</p>
             </div>
-            <button className='listingcardbutton'>view details</button>
+            <Link href={`../details/${id}`} className='listingcardbutton'>view details</Link>
             </div>
             
         </div>
