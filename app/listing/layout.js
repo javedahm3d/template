@@ -6,7 +6,7 @@ export default function RootLayout({ children }) {
   return (
         <>
         <Navbar setNavbarvalue={true} />
-        <div className="mainBackgroundpattern pt-20">
+        <div className="mainBackgroundpattern">
         {children}
         {footer()}
         </div>
