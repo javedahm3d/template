@@ -5,7 +5,7 @@ import Listingcard from "../components/listingcard";
 
 export default function Home() {
   return (
-    <main>
+    <main className="listingloadingscreen">
         {categorybar()}
         <div className="h-4"></div>
 

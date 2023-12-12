@@ -1,0 +1,90 @@
+.loadingscreen{
+    position:absolute;
+    left:0;
+    margin-top: -80px;
+    width:100%;
+    height:100%;
+    background-color: white;
+    z-index: 20;
+    
+}
+
+.listinglistingpage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.loadingcategorybarcontainer{
+    display: flex;
+    position: relative;
+    top: 5px;
+    justify-content: center;
+
+    @media (max-width:1380px){
+        top: -12px;
+
+    }
+}
+.loadingcategorybar{
+    position: fixed;
+    height: 60px;
+    width: 80vw;
+    border-radius: 20px;
+    background-color: rgba(128, 128, 128, 0.642);
+
+  @media (max-width:900px){
+    width: 90vw;
+   }
+
+   @media (max-width:650px){
+    width: 98vw;
+   }
+}
+
+.loadinglistingpagecontainer{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width:900px){
+      width: 96%;
+    }
+    @media (max-width:850px){
+      width: 92%;
+    }
+    @media (max-width:550px){
+      justify-content: space-around;
+  }
+}
+
+.listingloadingcard{
+    width: 28%;
+    height: 400px;
+    background-color: rgb(201, 201, 201);
+    border-radius: 12px;
+    overflow:hidden ;
+    margin: 20px 10px;
+
+    @media (max-width:1200px){
+        width: 30%;
+    }
+
+    @media (max-width:850px){
+        width: 46%;
+    }
+
+    @media (max-width:550px){
+        width: 90%;
+    }
+}
+
+.loadinglistingcardimagepart{
+    width: 100%;
+    height: 70%;
+    background-color: rgba(128, 128, 128, 0.642);;
+}
