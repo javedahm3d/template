@@ -13,8 +13,9 @@ export default function Map() {
   const customIcon = new Icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
     // iconUrl: require("./icons/placeholder.png"),
-    iconSize: [70, 70] // size of the icon
-  });
+    iconSize: [50, 50],
+    iconAnchor: [30.48, 50] 
+ });
 
   return (
     <MapContainer center={[51.505, -0.09]} zoom={16}>
