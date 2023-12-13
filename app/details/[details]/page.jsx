@@ -1,6 +1,9 @@
 "use client";
 import Layout from '../../listing/layout';
 import '@/style/detailsPage.scss'
+import dynamic from 'next/dynamic';
+
+const Map = dynamic(() => import('@/app/components/map'), { ssr: false });
 
 export default function Home() {
   return (
@@ -17,7 +20,9 @@ export default function Home() {
             </div>
           <div className="reservationcard"></div>
         </div>
-        <div className="maplocation"></div>
+        <div className="maplocation">
+        <Map/>
+        </div>
          
       </div>
     </Layout>

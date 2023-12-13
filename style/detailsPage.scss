@@ -99,4 +99,7 @@
     height: 400px;
     background-color: blue;
     margin-top: 10px;
+    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
 }

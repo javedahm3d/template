@@ -11,10 +11,14 @@
   "dependencies": {
     "aos": "^2.3.4",
     "framer-motion": "^10.16.12",
+    "google-map-react": "^2.2.1",
+    "google-maps-react": "^2.0.6",
     "next": "14.0.3",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
+    "react-leaflet": "^4.2.1",
+    "react-leaflet-cluster": "^2.1.0",
     "sass": "^1.69.5"
   },
   "devDependencies": {
