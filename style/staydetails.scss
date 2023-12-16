@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+hr{
+    margin: 12px 10px;
+}
+
+.villadetails{
+    padding: 20px 60px;
+    padding-top: 5px;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.stayinfosection{
+    width: 71%;
+    // height: 600px;
+}
+
+.villadetailstitleandfavoutirehareicons{
+    font-size: 28px;
+    font-weight: 530;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.villadetailstitle{
+    width: 85%;
+}
+.villadetailsfavouriteandshare{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    p{
+        font-size: 14px;
+    }
+}
+
+.villaquickdetails{
+    margin-top: -8px;
+}
+
+.villareview{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 18px;
+}
+
+.reviewslink{
+    padding-left: 10px;
+    text-decoration: underline;
+    font-weight: 550;
+}
+
+.hosterdetails{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hosterimage{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: blue;
+}
+
+.hostername{
+    color: gray;
+    font-size: 17px;
+
+}
+
+.hostedby{
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.villadetaildescriptioncontainer{
+    padding-top: 10px;
+    font-size: 18px;
+    color: rgb(89, 89, 89);
+}
+
+.villadeatilsdescriptioncontent{
+    overflow: hidden;
+    max-height: 195px;
+
+}
+
+.villadetailshowmore{
+    padding-top: 12px;
+    color: black;
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.villadetailsamenitiestitle{
+    font-size: 28px ;
+}
+
+.amenitiesoptionsconatiner{
+    width: 92%;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.amentinitiesoption{
+   width: 40%;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   gap: 5px;
+
+   p{
+    font-size: 18.5px;
+    font-weight: 400;
+    color: gray;
+    word-wrap: break-word;
+   }
+}
+.amentiniesicon{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+}
+
+.showallamenitiesbutton{
+    font-size: 20px;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+}

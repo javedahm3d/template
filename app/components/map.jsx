@@ -18,7 +18,7 @@ export default function Map() {
  });
 
   return (
-    <MapContainer center={[51.505, -0.09]} zoom={16}>
+    <MapContainer center={[51.505, -0.09]} zoom={16} className='MapContainer' scrollWheelZoom={false}>
   <TileLayer
         attribution="Google Maps"
         // url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}" // regular
