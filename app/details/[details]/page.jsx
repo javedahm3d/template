@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { CgMenuGridR } from "react-icons/cg";
 import Reservationcard from '../../components/reservationCard'
 import Staydetails from './staydetails';
+import { DateProvider } from './datecontext';
 
 
 const Map = dynamic(() => import('@/app/components/map'), { ssr: false });
@@ -13,7 +14,9 @@ const Map = dynamic(() => import('@/app/components/map'), { ssr: false });
 export default function Home() {
 
   return (
-    <Layout>   
+    <Layout>
+      <DateProvider>
+
       <div className="detailsPageConatiner">
         <div className="imageandname">
          <h1 className='stayname'>Luxury pool villa: 4BHK: Curtorim,Goa </h1>
@@ -34,7 +37,7 @@ export default function Home() {
             <Staydetails/>
 
             {/* reservationCard in components */}
-            <Reservationcard/>
+            <Reservationcard price={25000}/>
 
         </div>
         <div className="maplocation">
@@ -42,6 +45,8 @@ export default function Home() {
         </div>
          
       </div>
+
+      </DateProvider>
     </Layout>
   );
 }

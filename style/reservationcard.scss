@@ -74,7 +74,16 @@
     padding: 1px 10px;
 }
 
-.reservationcheckinbutton{
+.reservationdetailscontainer{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+}
+
+.reservationcheckavilabilitybutton{
    margin-top: 10px;
    width: 90%;
    height: 50px;
@@ -85,4 +94,34 @@
    justify-content: center;
    color: white;
    font-size: 19px;
+}
+
+.reservationCardCalculationsconatiner{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.reservationCardCalculation{
+    display: flex;
+    align-items: baseline;
+    h3{
+        color: gray;
+        font-size: 13px;
+    }
+}
+
+.reservationButton{
+
+    margin-top: 10px;
+   width: 90%;
+   height: 50px;
+   background-color: green;
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   font-size: 19px;
+
 }

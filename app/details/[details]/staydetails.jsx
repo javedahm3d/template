@@ -1,6 +1,6 @@
 import "@/style/staydetails.scss";
 // import 'react-calendar/dist/Calendar.css';
-import './calenderstyle.css'
+// import './calenderstyle.scss'
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -8,11 +8,8 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import { IoShareSocialOutline } from "react-icons/io5";import Link from "next/link";
-import { render } from "react-dom";
-import Calendar from "react-calendar";
-import {ToastContainer,toast } from 'react-toastify';
-import { useState } from "react";
 import { useEffect } from "react";
+import Calendar from "@/app/components/calender";
 
 
 
@@ -39,66 +36,6 @@ export default function staydetails() {
       });
     });
   }, []);
-  
-  
-  
-
-  const showToastMessage = (msg) => {
-    toast.error(msg, {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
-};
-
-
-
-    const [date, setDate] = useState(new Date());
-
-    const [disabledDates, setDisabledDates] = useState([
-      new Date(2023, 11, 19), // December 19, 2023
-      new Date(2023, 11, 21), // December 21, 2023
-    ]);
-  
-    const [selectedDateRange, setSelectedDateRange] = useState([]);
-  
-    const tileDisabled = ({ date, view }) => {
-      return (
-        view === 'month' &&
-        disabledDates.some((disabledDate) =>
-          date.getFullYear() === disabledDate.getFullYear() &&
-          date.getMonth() === disabledDate.getMonth() &&
-          date.getDate() === disabledDate.getDate()
-        )
-      );
-    };
-  
-    const onSelectDate = (value) => {
-      if (value.length === 2) {
-        const [startDate, endDate] = value;
-        const isRangeValid = !disabledDates.some(
-          (disabledDate) =>
-            disabledDate >= startDate && disabledDate <= endDate
-        );
-  
-        if (isRangeValid) {
-          setSelectedDateRange(value);
-          console.log(selectedDateRange)
-        } else {
-          showToastMessage('Range contains disabled date. Please select a valid range.')
-          console.log('Range contains disabled date. Please select a valid range.');
-        }
-      } else {
-        setSelectedDateRange(value);
-        console.log(selectedDateRange)
-
-      }
-    };
     
     const content = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum blanditiis illo minima est quis quidem voluptas repellendus eos repellat commodi obcaecati deleniti soluta officia quo mollitia eveniet maxime aperiam cum, pariatur recusandae magnam odio officiis? Sint fugit similique placeat recusandae commodi tempora velit. Laborum omnis, fugiat nesciunt incidunt fuga explicabo esse, et est earum voluptates eos adipisci! Aut veniam quia similique minima nam reiciendis accusantium sint obcaecati repudia eos repellat commodi obcaecati deleniti soluta officia quo mollitia eveniet maxime aperiam cum, pariatur recusandae magnam odio officiis? Sint fugit similique placeat recusandae commodi tempora velit. Laborum omnis, fugiat nesciunt incidunt fuga explicabo esse, et est earum voluptates eos adipisci! Aut veniam quia similique minima nam reiciendis accusantium sint obcaecati repudia eos repellat commodi obcaecati deleniti soluta officia quo mollitia eveniet maxime aperiam cum, pariatur recusandae magnam odio officiis? Sint fugit similique placeat recusandae commodi tempora velit. Laborum omnis, fugiat nesciunt incidunt fuga explicabo esse, et est earum voluptates eos adipisci! Aut veniam quia similique minima nam reiciendis accusantium sint obcaecati repudia."
 
@@ -165,18 +102,8 @@ export default function staydetails() {
 
 
         <div className="calender" id="calender">
-           <Calendar 
-           onChange={onSelectDate}
-                value={selectedDateRange}
-                selectRange={true}
-                showWeekNumbers={false}
-                next2Label={null}
-                prev2Label={null}
-                showNeighboringMonth={false}
-                minDate={new Date()}
-                tileDisabled={tileDisabled}   
-                showDoubleView        
-           />           
+
+                  <Calendar/>    
       </div>
       </div>
     </div>

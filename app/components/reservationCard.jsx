@@ -1,11 +1,21 @@
 import '@/style/reservationcard.scss'
-import { FaIndianRupeeSign } from "react-icons/fa6";
+// import { FaIndianRupeeSign } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useDateContext } from '../details/[details]/datecontext';
 
-export default function reservationcard(){
+export default function reservationcard({price}){
+  const { selectedDateRange } = useDateContext();
+  const [numberofdays, setnumberofdays] = useState(0);
+  const [totalprice, settotalprice] = useState(0);
 
+  React.useEffect(() => {
+    // This code will run whenever selectedDateRange changes
+    calculateAndSetNumberOfNights(selectedDateRange[0], selectedDateRange[1]);
+  }, [selectedDateRange]);
+
+  
   const [reservationCardpostion, setreservationCardpostion] = useState('');
   const changereservationCardpostion = () =>{
     const screenWidth = window.innerWidth;
@@ -26,20 +36,33 @@ export default function reservationcard(){
         window.removeEventListener('scroll', changereservationCardpostion);
       };
   }, []);
+
+
+  const calculateAndSetNumberOfNights = (startDate, endDate) => {
+    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    const daysDifference = Math.round(Math.abs((startDate - endDate) / oneDay));
+    setnumberofdays(daysDifference)
+    settotalprice(daysDifference*price)
+  };
+
+  onchange => selectedDateRange=>{
+    calculateDateDifference()
+  }
     
     return(
             <div className={reservationCardpostion=='fixed'? 'reservationcard fixed right-12 top-60' :reservationCardpostion=='absolute'? 'reservationcard relative top-[950px]':'reservationcard'}>
-            <h1 className="reservationcardprice"><FaIndianRupeeSign />25,000 <span>night</span></h1>
+            
+            <h1 className="reservationcardprice">₹{price}<span>night</span></h1>
                 <div className="reservationdetailsinput">
                 <div className="reservationdates">
                     <Link href="#calender"  className="reservationcheckin">
                         <h2>CHECK IN</h2>
-                        <h1>01/01/2024</h1>
+                        <h1>{selectedDateRange[0]?(selectedDateRange[0]?.toLocaleDateString('en-IN')): 'add date'}</h1>
                     </Link >
-                    <div className="reservationcheckout">
+                    <Link href="#calender" className="reservationcheckout">
                         <h2>CHECK OUT</h2>
-                        <h1>12/01/2024</h1>
-                    </div>
+                        <h1>{selectedDateRange[1]?(selectedDateRange[1]?.toLocaleDateString('en-IN')): 'add date'}</h1>
+                    </Link>
                 </div>
                 <div className="reservationguests">
                         <div className="reservationguestsdetails">
@@ -49,7 +72,30 @@ export default function reservationcard(){
                         <IoIosArrowDown />
                 </div>
                 </div>
-                <div className="reservationcheckinbutton">check availability</div>
+                
+                  <div className='reservationdetailscontainer'>
+                  {
+                     selectedDateRange[0]?
+                     ( 
+                      <>
+                      <div className='reservationCardCalculationsconatiner'>
+                        <h1>Total amount</h1>
+                        <div className='reservationCardCalculation'><h3>{numberofdays}x₹{price}=</h3> <h1>₹{totalprice}</h1></div>
+                      </div>
+
+                      <div className="reservationButton">
+                          reserve
+                       </div>
+
+                      </>
+                      
+                    ) : <Link href="#calender" className="reservationcheckavilabilitybutton">
+                          check availability
+                    </Link >
+                  }
+                  </div>
+                
+                
             </div >
     )
 }
