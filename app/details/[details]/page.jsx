@@ -7,9 +7,11 @@ import { CgMenuGridR } from "react-icons/cg";
 import Reservationcard from '../../components/reservationCard'
 import Staydetails from './staydetails';
 
+
 const Map = dynamic(() => import('@/app/components/map'), { ssr: false });
 
 export default function Home() {
+
   return (
     <Layout>   
       <div className="detailsPageConatiner">
@@ -33,6 +35,7 @@ export default function Home() {
 
             {/* reservationCard in components */}
             <Reservationcard/>
+
         </div>
         <div className="maplocation">
         <Map/>

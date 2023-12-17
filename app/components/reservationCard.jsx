@@ -2,6 +2,7 @@ import '@/style/reservationcard.scss'
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 export default function reservationcard(){
 
@@ -10,9 +11,9 @@ export default function reservationcard(){
     const screenWidth = window.innerWidth;
     if (screenWidth < 850) {
         setreservationCardpostion('');
-      } else if (window.scrollY >= 320 && window.scrollY <= 650) {
+      } else if (window.scrollY >= 320 && window.scrollY <= 1300) {
         setreservationCardpostion('fixed');
-      } else if (window.scrollY >= 650) {
+      } else if (window.scrollY > 1300) {
         setreservationCardpostion('absolute');
       } else {
         setreservationCardpostion('');
@@ -27,14 +28,14 @@ export default function reservationcard(){
   }, []);
     
     return(
-            <div className={reservationCardpostion=='fixed'? 'reservationcard fixed right-12 top-60' :reservationCardpostion=='absolute'? 'reservationcard relative top-[330px]':'reservationcard'}>
+            <div className={reservationCardpostion=='fixed'? 'reservationcard fixed right-12 top-60' :reservationCardpostion=='absolute'? 'reservationcard relative top-[950px]':'reservationcard'}>
             <h1 className="reservationcardprice"><FaIndianRupeeSign />25,000 <span>night</span></h1>
                 <div className="reservationdetailsinput">
                 <div className="reservationdates">
-                    <div className="reservationcheckin">
+                    <Link href="#calender"  className="reservationcheckin">
                         <h2>CHECK IN</h2>
                         <h1>01/01/2024</h1>
-                    </div>
+                    </Link >
                     <div className="reservationcheckout">
                         <h2>CHECK OUT</h2>
                         <h1>12/01/2024</h1>
