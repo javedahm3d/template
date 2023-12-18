@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+
+.listingcard{
+    width: 28%;
+    height: 400px;
+    background-color: white;
+    border-radius: 12px;
+    margin: 20px 10px;
+
+    @media (max-width:1200px){
+        width: 30%;
+    }
+
+    @media (max-width:850px){
+        width: 46%;
+    }
+
+    @media (max-width:550px){
+        width: 90%;
+    }
+
+}
+
+.listingcardImageContainer{
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.listinglabels{
+    display: flex;
+    justify-content: flex-end;
+    padding: 3px;
+
+}
+
+.labelarea{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 3px;
+    @media (max-width:650px){
+        width: 30%;
+    }
+}
+
+.label{
+    align-items: center;
+    background-color: lightblue;
+    border-radius: 2px;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.listingcardbody{
+    padding-left: 5px;
+    margin-top: -22px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.listingcardinfo{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.listingcardinfo{
+    font-size: 15px;
+    font-weight: 450;
+    color: rgb(93, 93, 93);
+
+    @media (max-width:850px){
+        font-size: 14spx;
+    }
+}
+
+.hotelname{
+    width: 16vws;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    padding-bottom: 4px;
+    @media (max-width:650px){
+        width: 18vw;
+    }
+
+    @media (max-width:550px){
+        width: 30vw;
+    }
+}
+
+.listingcardbutton{
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    font-size: 1.2vw;
+    font-weight: 500;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.315);
+    padding: 0.8vw 0.5vw;
+    background-color: rgba(241, 233, 233, 0.807);
+    // background-color: rgb(217, 58, 0);
+    border-radius: 10px;
+    align-self:flex-end;
+    justify-self: end;
+    transition: 0.3s;
+
+    &:hover{
+        background-color: rgba(255, 166, 0, 0.592)
+    }
+
+    @media (max-width:1800px) and (min-width:1400px) {
+        width: 8vw;
+
+        font-size:16px;
+        padding: 8px 3px;
+    }
+    @media (max-width:900px) {
+        font-size:14px;
+        padding: 10px 3px;
+    }
+    @media (max-width:550px) {
+            width: 100px;
+    }
+
+}

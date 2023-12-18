@@ -6,10 +6,13 @@ import Slider from "./components/slider";
 import Identity from "./screens/identity";
 import footer from "./components/footer";
 import reviews from "./screens/reviews";
+import Navbar from './components/navbar'
+
 
 export default function Home() {
   return (
     <main className="">
+      <Navbar/>
       {heroPage()}
       {experiencePage()}
       {discover()}
