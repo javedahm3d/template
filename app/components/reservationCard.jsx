@@ -112,6 +112,12 @@ export default function reservationcard({price}){
     if (petsCount > 0) {
       guestsArray.push(`${petsCount} pet${petsCount !== 1 ? 's' : ''}`);
     }
+
+    // If all counts are zero, display "1 guest"
+    if (guestsArray.length === 0) {
+      guestsArray.push('1 guest');
+    }
+    
     return guestsArray.join(', ');
   };
 
