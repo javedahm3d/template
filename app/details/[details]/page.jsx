@@ -42,6 +42,9 @@ export default function Home() {
         </div>
         <div className="maplocation">
         <Map/>
+        
+        
+
         </div>
          
       </div>

@@ -1,8 +1,7 @@
 
 .reservationcard{
     // position: relative;
-    width: 28%;
-    height: 260px;
+    width: 27vw;
     background-color: rgb(254, 254, 254);
     border-radius: 20px;
     box-shadow:
@@ -15,6 +14,7 @@
     justify-content: center;
     align-items: center;
     padding: 15px 20px;
+    z-index: 5;
 }
 
 .reservationcardprice{
@@ -63,10 +63,12 @@
 }
 
 .reservationguests{
+    z-index: 5;
     padding: 1px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 
 }
 
@@ -124,4 +126,50 @@
    color: white;
    font-size: 19px;
 
+}
+
+.addguestpopupMenuconatiner{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    width: 100%;
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: gray;
+}
+
+.addguestpopupMenu{
+    width: 100%;
+    padding: 20px; 
+    // background-color: aqua;
+    width: 90%;
+    align-self: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(250, 218, 158, 0.349);
+}
+
+.addguestpopupMenuitem{
+    display: flex;
+    justify-content: space-between;
+}
+
+.addguestpopupMenuiteaddminus{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+
+    p{
+        width: 20px;
+        text-align: center;
+    }
+}
+
+.popupaddminusicon{
+    cursor: pointer;
 }
