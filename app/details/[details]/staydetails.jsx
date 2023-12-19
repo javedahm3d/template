@@ -1,6 +1,5 @@
+'use client';
 import "@/style/staydetails.scss";
-// import 'react-calendar/dist/Calendar.css';
-// import './calenderstyle.scss'
 import 'react-toastify/dist/ReactToastify.css';
 
 

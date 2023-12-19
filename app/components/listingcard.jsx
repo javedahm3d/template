@@ -16,7 +16,7 @@ export default function listingcard({image, name , price , location , rooms , la
                 <div className="labelarea">
                 {
                     labels.map((label, i) => (
-                            <div className='label'>{label}</div>
+                            <div className='label' key={i}>{label}</div>
                     ))
                 }
                 </div>

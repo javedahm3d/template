@@ -1,4 +1,3 @@
-"use client";
 import Layout from '../../listing/layout';
 import '@/style/detailsPage.scss'
 import dynamic from 'next/dynamic';

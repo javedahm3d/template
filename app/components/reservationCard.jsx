@@ -1,3 +1,4 @@
+'use client'
 import '@/style/reservationcard.scss'
 // import { FaIndianRupeeSign } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";

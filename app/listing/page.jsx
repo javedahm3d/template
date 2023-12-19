@@ -1,31 +1,38 @@
-"use client";
+// "use client";
 import "@/style/listing.scss";
 import categorybar from "../components/categorybar";
 import Listingcard from "../components/listingcard";
+import React from "react";
 
 export default function Home() {
+
+  const MemoizedListingCard = React.memo(Listingcard);
+
   return (
     <main className="listingloadingscreen">
         {categorybar()}
+        {/* <React.Fragment> */}
         <div className="h-4"></div>
 
         <div className="listingpage">
           <div className="listingpagecontainer">
-            {data.map((d, index) => (
-              <Listingcard
-                image={d.image}
-                name={d.name}
-                price={d.price}
-                location={d.location}
-                rooms={d.rooms}
-                labels={d.labels}
-                id={d.id}
+            {data.map((d) => (
+              <React.Fragment key={d.id}>         
+                 <MemoizedListingCard
+                 image={d.image}
+                 name={d.name}
+                 price={d.price}
+                 location={d.location}
+                 rooms={d.rooms}
+                 labels={d.labels}
+                 id={d.id}
               />
+             </React.Fragment>
             ))}
 
-            {/* {listingcard()} */}
           </div>
         </div>
+        {/* </React.Fragment> */}
     </main>
   );
 }
@@ -34,7 +41,7 @@ export default function Home() {
 
 const data = [
   {
-    id:'01',
+    id:1,
     name: "Luxury pool villa",
     image: "/h1.jpg",
     price: "25000",
@@ -44,7 +51,7 @@ const data = [
     
   },
   {
-    id:'02',
+    id:2,
     name: "Luxury pool villa",
     image: "/h1.jpg",
     price: "25000",
@@ -53,7 +60,7 @@ const data = [
     labels: ["mountain", "beach"],
   },
   {
-    id:'03',
+    id:3,
     name: "Luxury pool villa",
     image: "/h1.jpg",
     price: "25000",
@@ -62,7 +69,7 @@ const data = [
     labels: ["mountain", "beach"],
   },
   {
-    id:'04',
+    id:4,
     name: "Luxury pool villa",
     image: "/h1.jpg",
     price: "25000",
