@@ -1,3 +1,13 @@
+.reservationcardconatiner{
+
+    @media (max-width: 1200px){
+            width: 100%;
+            display: flex;   
+            justify-content: center;
+    
+    }
+
+}
 
 .reservationcard{
     // position: relative;
@@ -15,6 +25,14 @@
     align-items: center;
     padding: 15px 20px;
     z-index: 5;
+
+    @media (max-width: 1200px){
+            width: 80%;
+            margin-bottom: 0px;
+    }
+    @media (max-width: 600px){
+        width: 90%;
+}
 }
 
 .reservationcardprice{

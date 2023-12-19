@@ -1,6 +1,5 @@
 'use client'
 import '@/style/reservationcard.scss'
-// import { FaIndianRupeeSign } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoAddCircleOutline } from "react-icons/io5";
@@ -31,7 +30,7 @@ export default function reservationcard({price}){
   const [reservationCardpostion, setreservationCardpostion] = useState('');
   const changereservationCardpostion = () =>{
     const screenWidth = window.innerWidth;
-    if (screenWidth < 850) {
+    if (screenWidth <= 1200) {
         setreservationCardpostion('');
       } else if (window.scrollY >= 320 && window.scrollY <= 1250) {
         setreservationCardpostion('fixed');
@@ -131,10 +130,10 @@ export default function reservationcard({price}){
 
     
     return(
-            <div>
+          <div className='reservationcardconatiner'>
               <div className={reservationCardpostion=='fixed'? 'reservationcard fixed right-12 top-60 scale-105' :reservationCardpostion=='absolute'? 'reservationcard relative top-[920px]':'reservationcard'}>
             
-            <h1 className="reservationcardprice">₹{price}<span>night</span></h1>
+             <h1 className="reservationcardprice">₹{price}<span>night</span></h1>
                 <div className="reservationdetailsinput">
                 <div className="reservationdates">
                     <Link href="#calender"  className="reservationcheckin">

@@ -11,7 +11,7 @@ import { DateProvider } from './datecontext';
 const Map = dynamic(() => import('@/app/components/map'), { ssr: false });
 
 export default function Home() {
-
+   
   return (
     <Layout>
       <DateProvider>
