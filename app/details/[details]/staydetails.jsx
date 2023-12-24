@@ -175,6 +175,9 @@ export default function staydetails() {
           <p>Villa details</p>
           <div className="showmorepopupcontentdetails">{content}</div>
         </div>
+        <form method="dialog" className="modal-backdrop">
+          <button className="closepopupbutton"></button>
+        </form>
       </dialog>
 
       <dialog id="viewallamenitiesmodal" className="modal">
@@ -193,6 +196,9 @@ export default function staydetails() {
             ))}
           </div>
         </div>
+        <form method="dialog" className="modal-backdrop">
+          <button className="closepopupbutton"></button>
+        </form>
       </dialog>
 
       {/* <dialog id="sharemodal" className="sharemodal">

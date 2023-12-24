@@ -7,6 +7,7 @@ import Reservationcard from "../../components/reservationCard";
 import Staydetails from "./staydetails";
 import { DateProvider } from "./datecontext";
 import VillaReviewCard from "@/app/components/villareviewcard";
+import Link from "next/link";
 
 const Map = dynamic(() => import("@/app/components/map"), { ssr: false });
 
@@ -59,10 +60,10 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="showallimagesbutton">
+            <button  className="showallimagesbutton">
               <CgMenuGridR />
               Show all photos
-            </div>
+            </button>
           </div>
         </div>
         <DateProvider>
