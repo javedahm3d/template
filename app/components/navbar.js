@@ -116,7 +116,7 @@ export default function Navbar({setNavbarvalue=false}){
                       </div>
                   </div>
                   <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
-                      <Link className="flex items-center"  href="#hero">
+                      <Link className="flex items-center"  href="/">
                       <div style={{ backgroundImage: `url(${navbar? Logo_black.src : Logo.src })` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>
                       <span className={navbar?'mx-3 text-gray-700':'mx-3 text-white'} ><b>CodeMonkey</b></span>
                       </Link>
@@ -174,7 +174,7 @@ export default function Navbar({setNavbarvalue=false}){
 
       <nav>
           <div className={navbar? "bg-white drop-shadow-md py-4 px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40" : "py-4 px-6 w-full flex xl:hidden justify-between items-center fixed top-0 z-40"}>
-                       <Link className="flex items-center"  href="#hero" >
+                       <Link className="flex items-center"  href="/" >
                        <div style={{ backgroundImage: `url(${navbar? Logo_black.src : Logo.src })` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>
                           <span className={navbar?'mx-3 text-gray-700':'mx-3 text-white'} ><b>CodeMonkey</b></span>
                       </Link>
@@ -203,7 +203,7 @@ export default function Navbar({setNavbarvalue=false}){
                           <div>
                               <div className="mt-6 flex w-full items-center justify-between">
                                   <div className="flex items-center justify-between w-full">
-                                      <Link className="flex items-center cursor-pointer" href="#hero" onClick={() => setShow(!show)}>
+                                      <Link className="flex items-center cursor-pointer" href="/" onClick={() => setShow(!show)}>
                                       <div style={{ backgroundImage: `url(${navbar? Logo_black.src : Logo.src })` ,backgroundSize:'contain',backgroundRepeat: 'no-repeat' ,width: '50px', height:'30px' }}></div>
                                         <span className='mx-3' ><b>CodeMonkey</b></span>
                                       </Link>

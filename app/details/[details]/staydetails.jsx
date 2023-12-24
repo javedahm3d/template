@@ -59,7 +59,7 @@ export default function staydetails() {
         </h3>
         <div className="villareview">
           <FaStar /> 4.2{" "}
-          <Link href="" className="reviewslink">
+          <Link href="#villareviewssection" className="reviewslink">
             5 reviews
           </Link>
         </div>

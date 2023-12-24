@@ -51,7 +51,7 @@
     width: 100%;
     height: 60vh;
     display: flex;
-    gap: 4;
+    gap: 3px;
     justify-content: space-between;
     border-radius: 20px;
     overflow: hidden;
@@ -176,4 +176,29 @@
         padding: 15px 10px;
 
     }
+}
+
+
+.villareviewssection{
+    width: 100%;
+    // height: 400px;
+    padding: 50px 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.villareviewstitle{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+.villareviewcardsconatiner{
+    padding: 30px 3vw;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
 }
