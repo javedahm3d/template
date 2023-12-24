@@ -4,12 +4,6 @@ import { FaStar } from "react-icons/fa";
 
 
 export default function VillaReviewCard({imageurl,name , rating , comment}){
-
-    // Parse the rating into an integer
-    const parsedRating = parseInt(rating, 10);
-
-    // Validate if the parsedRating is a valid integer between 0 and 5
-    const validatedRating = Math.min(5, Math.max(0, parsedRating));
     
     return(
         <div className="villareviewcard">
