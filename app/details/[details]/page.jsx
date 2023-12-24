@@ -102,13 +102,13 @@ const reviewcardata=[
   {
     imageurl:"",
     name : "Javed Choudhary",
-    rating : 4,
+    rating : 5,
     comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, ex minima fuga minus corrupti itaque amet excepturi animi perferendis. Voluptatem voluptates quam nam.'
   },
   {
     imageurl:"",
     name : "Javed Choudhary",
-    rating : 4,
+    rating : 3,
     comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, ex minima fuga minus corrupti itaque amet excepturi animi perferendis. Voluptatem voluptates quam nam.amet consectetur adipisicing elit. Delectus, ex minima fuga minus corrupti itaque amet excepturi animi perferendis. Voluptatem voluptates quam nam'
   },
   {
