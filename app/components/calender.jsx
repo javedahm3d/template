@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import {ToastContainer,toast } from 'react-toastify';
 import { useDateContext } from '../details/[details]/datecontext';
+// import Month from 'react-calendar/dist/cjs/YearView/Month';
 
 
 
@@ -70,7 +71,7 @@ export default function calendar({ onDateSelect }){
     return(
         <>
         <Calendar 
-           onChange={onSelectDate}
+                onChange={onSelectDate}
                 value={selectedDateRange}
                 selectRange={true}
                 showWeekNumbers={false}
@@ -79,7 +80,9 @@ export default function calendar({ onDateSelect }){
                 showNeighboringMonth={false}
                 minDate={new Date()}
                 tileDisabled={tileDisabled}   
-                showDoubleView        
+                showDoubleView     
+                minDetail ={'Month'}   
+                goToRangeStartOnSelect ={false}
            /> 
         </>
     )
