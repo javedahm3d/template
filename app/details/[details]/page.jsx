@@ -5,7 +5,6 @@ import Reservationcard from "../../components/reservationCard";
 import Staydetails from "./staydetails";
 import { DateProvider } from "./datecontext";
 import VillaReviewCard from "@/app/components/villareviewcard";
-import showPhotos from "./showPhotos";
 import VillaImageSection from "./villaimagesection";
 
 const Map = dynamic(() => import("@/app/components/map"), { ssr: false });
