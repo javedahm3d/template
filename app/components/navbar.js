@@ -382,9 +382,9 @@ const Navbar = ({ setNavbarvalue = false }) => {
                   >
                     {session?.user ? (
                       <div className="flex gap-3">
-                        <button onClick={signOut}>
+                        {/* <button onClick={signOut}>
                           sign out
-                        </button>
+                        </button> */}
 
                         <Link href="/profile">
                           <Image
