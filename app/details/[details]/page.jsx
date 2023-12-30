@@ -1,12 +1,12 @@
 import Layout from "../../listing/layout";
 import "@/style/detailsPage.scss";
 import dynamic from "next/dynamic";
-import Image from "next/image";
-import { CgMenuGridR } from "react-icons/cg";
 import Reservationcard from "../../components/reservationCard";
 import Staydetails from "./staydetails";
 import { DateProvider } from "./datecontext";
 import VillaReviewCard from "@/app/components/villareviewcard";
+import showPhotos from "./showPhotos";
+import VillaImageSection from "./villaimagesection";
 
 const Map = dynamic(() => import("@/app/components/map"), { ssr: false });
 
@@ -14,57 +14,7 @@ export default function Home() {
   return (
     <Layout>
       <div className="detailsPageConatiner">
-        <div className="imageandname">
-          <h1 className="stayname">Luxury pool villa: 4BHK: Curtorim,Goa </h1>
-          <div className="imageconatiner">
-            <div className="maindetailsimage">
-              <Image
-                src="/h1.jpg"
-                alt="villa image"
-                fill={true}
-                objectFit="cover"
-              />
-            </div>
-            <div className="maindetailsimagesecondary">
-              <div className="maindetailsimagesecondaryinner">
-                <Image
-                  src="/h2.jpg"
-                  alt="villa image"
-                  fill={true}
-                  objectFit="cover"
-                />
-              </div>
-              <div className="maindetailsimagesecondaryinner">
-                <Image
-                  src="/h3.jpg"
-                  alt="villa image"
-                  fill={true}
-                  objectFit="cover"
-                />
-              </div>
-              <div className="maindetailsimagesecondaryinner">
-                <Image
-                  src="/h4.jpg"
-                  alt="villa image"
-                  fill={true}
-                  objectFit="cover"
-                />
-              </div>
-              <div className="maindetailsimagesecondaryinner">
-                <Image
-                  src="/h5.jpg"
-                  alt="villa image"
-                  fill={true}
-                  objectFit="cover"
-                />
-              </div>
-            </div>
-            <button  className="showallimagesbutton">
-              <CgMenuGridR />
-              Show all photos
-            </button>
-          </div>
-        </div>
+        <VillaImageSection/>
         <DateProvider>
           <div className="detailspagelowerbody">
             {/* in same directory */}
