@@ -382,7 +382,7 @@ const Navbar = ({ setNavbarvalue = false }) => {
                   >
                     {session?.user ? (
                       <div className="flex gap-3">
-                        <button onClick={signOut} className="signOutButton">
+                        <button onClick={signOut}>
                           sign out
                         </button>
 
@@ -406,7 +406,6 @@ const Navbar = ({ setNavbarvalue = false }) => {
                               onClick={() => {
                                 signIn(provider.id);
                               }}
-                              className="signOutButton"
                             >
                               Sign in
                             </button>
