@@ -9,6 +9,11 @@ import VillaImageSection from "./villaimagesection";
 
 const Map = dynamic(() => import("@/app/components/map"), { ssr: false });
 
+export const metadata = {
+  title: 'details | CodeMonkey',
+  description: 'codemonkey details page',
+}
+
 export default function Home() {
   return (
     <Layout>

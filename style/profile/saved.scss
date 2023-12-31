@@ -1,0 +1,64 @@
+.savedscreen{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 30px;
+    align-items: center;
+}
+.savedCard{
+    width: 90%;
+    height: 150px;
+    background-color: azure;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.savecardimageConatiner{
+    display: flex;
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+}
+
+.savedimage{
+    border-radius: 10px;
+}
+.saveCardDetails{
+    width: 60%;
+    color: rgb(106, 106, 106);
+}
+.savecardname{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.savecardbutton{
+    display: flex;
+    flex-direction: column;
+    align-content: baseline;
+    justify-content: space-between;
+    padding: 10px;
+    // background-color: yellow;
+    gap: 12px;
+    // align-items: end;
+}
+.saveCardremoveButton{
+    padding: 0 5px;
+   align-self: flex-end;
+   color: rgb(75, 75, 75);
+    &:hover{
+        color: black;
+    }
+
+}
+.savecardviewbutton{
+    background-color: #0096FF;
+    padding: 5px 25px;
+    border-radius: 5px;
+    height: 35px;
+    color: white;
+    text-align: center;
+}
