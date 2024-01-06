@@ -6,8 +6,17 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const router = require('./routes');
 const bodyParser = require('body-parser')
+const cors = require('cors');
+
+const corsOptions = {
+  origin: 'http://localhost:3000',  // Set the origin to your frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,  // Enable credentials (cookies, authorization headers, etc.)
+  optionsSuccessStatus: 204,
+};
 
 app.use(express.json());
+app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(router);

@@ -4,6 +4,11 @@ import User from '@/models/user';
 import { connectToDB } from '@/utils/database';
 
 const handler = NextAuth({
+  cookies: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+  },
+  
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
@@ -11,11 +16,20 @@ const handler = NextAuth({
     })
   ],
   callbacks: {
-    async session({ session }) {
-      // store the user id from MongoDB to session
-      const sessionUser = await User.findOne({ email: session.user.email });
-      session.user.id = sessionUser._id.toString();
+    // async session({ session, token }) {     
+    //   const sessionUser = await User.findOne({ email: session.user.email });
+    //   // session.user.id = sessionUser._id.toString();
+    //   session.accessToken = token
+    //   return session;
+    async jwt({ token, user }) {
+      return { ...token, ...user };
+    },
+    async session({ session, token, user }) {
+            const sessionUser = await User.findOne({ email: session.user.email });
 
+            session.user.id = sessionUser._id.toString();
+
+      session.user = token;
       return session;
     },
     async signIn({ account, profile, user, credentials }) {

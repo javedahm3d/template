@@ -7,11 +7,16 @@ import { IoIosRemoveCircleOutline } from "react-icons/io";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useDateContext } from '../details/[details]/datecontext';
+import { useSession } from "next-auth/react";
+
 
 export default function reservationcard({price}){
   const { selectedDateRange } = useDateContext();
   const [numberofdays, setnumberofdays] = useState(0);
   const [totalprice, settotalprice] = useState(0);
+
+  const { data: session } = useSession();
+
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0 });
@@ -20,14 +25,30 @@ export default function reservationcard({price}){
   const [childrenCount, setChildrenCount] = useState(0);
   const [petsCount, setPetsCount] = useState(0);
   const [totalGuests, setTotalGuests] = useState('1 guest');
+  const [reservationCardpostion, setreservationCardpostion] = useState('');
+
+
+
 
   React.useEffect(() => {
     // This code will run whenever selectedDateRange changes
     calculateAndSetNumberOfNights(selectedDateRange[0], selectedDateRange[1]);
   }, [selectedDateRange]);
 
-  
-  const [reservationCardpostion, setreservationCardpostion] = useState('');
+  React.useEffect(() => {
+    window.addEventListener("scroll", changereservationCardpostion);
+    return () => {
+        window.removeEventListener('scroll', changereservationCardpostion);
+      };
+  }, []);
+
+  // Update total guests whenever any count changes
+  useEffect(() => {
+    const formattedGuestsString = formatGuestsString();
+    setTotalGuests(formattedGuestsString);
+  }, [adultsCount, childrenCount, petsCount]);
+
+
   const changereservationCardpostion = () =>{
     const screenWidth = window.innerWidth;
     if (screenWidth <= 1200) {
@@ -41,12 +62,7 @@ export default function reservationcard({price}){
       }
   }
 
-  React.useEffect(() => {
-    window.addEventListener("scroll", changereservationCardpostion);
-    return () => {
-        window.removeEventListener('scroll', changereservationCardpostion);
-      };
-  }, []);
+  
 
 
   const calculateAndSetNumberOfNights = (startDate, endDate) => {
@@ -121,14 +137,51 @@ export default function reservationcard({price}){
     return guestsArray.join(', ');
   };
 
-  // Update total guests whenever any count changes
-  useEffect(() => {
-    const formattedGuestsString = formatGuestsString();
-    setTotalGuests(formattedGuestsString);
-  }, [adultsCount, childrenCount, petsCount]);
 
 
+
+  const handleBooking = () =>{
+    console.log("In Handle Booking")
     
+    
+  const booking = {
+      "checkIn": selectedDateRange[0]?.toLocaleDateString('en-IN'),
+      "checkOut": selectedDateRange[1]?.toLocaleDateString('en-IN'),
+      "total": totalprice,
+      "type": "AC",
+    }
+    console.log(booking)
+      try {
+          fetch(
+              `http://localhost:3001/api/v1/booking?villaUID=657437fd43c7af7be63cd8b5`,
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                  },
+                  body: JSON.stringify({
+                    booking,
+                  }),
+                
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                  console.log(data)
+                  if (data.message == "Created Successful") {
+                    console.log("Success")
+                    alert("Booking Successfull")
+                    // navigate("/successBooking");                    
+                  }
+                  if (data.flag == "Internal Server error") {
+                    alert("Error Try Again");
+                  }
+            });
+      } catch (err) {
+            console.error("Error:", err);
+      }
+  };
+
     return(
           <div className='reservationcardconatiner'>
               <div className={reservationCardpostion=='fixed'? 'reservationcard fixed right-12 top-60 scale-105' :reservationCardpostion=='absolute'? 'reservationcard relative top-[920px]':'reservationcard'}>
@@ -136,19 +189,20 @@ export default function reservationcard({price}){
              <h1 className="reservationcardprice">₹{price}<span>night</span></h1>
                 <div className="reservationdetailsinput">
                 <div className="reservationdates">
-                    <Link href="#calender"  className="reservationcheckin">
+
+                  <Link href="#calender"  className="reservationcheckin">
                         <h2>CHECK IN</h2>
                         <h1>{selectedDateRange[0]?(selectedDateRange[0]?.toLocaleDateString('en-IN')): 'add date'}</h1>
                     </Link >
                     <Link href="#calender" className="reservationcheckout">
                         <h2>CHECK OUT</h2>
-                        <h1>{selectedDateRange[1]?(selectedDateRange[1]?.toLocaleDateString('en-IN')): 'add date'}</h1>
+                        <h1 >{selectedDateRange[1]?(selectedDateRange[1]?.toLocaleDateString('en-IN')): 'add date'}</h1>
                     </Link>
                 </div>
                 <div className="reservationguests" onClick={togglePopup} id="addGuestButton">
                         <div className="reservationguestsdetails">
                             <h2>GUESTS</h2>
-                            <h1>{totalGuests}</h1>
+                            <h1  >{totalGuests}</h1>
                         </div>
                         {
                           isPopupVisible?<IoIosArrowUp/>:<IoIosArrowDown />
@@ -162,7 +216,7 @@ export default function reservationcard({price}){
                 {isPopupVisible && (
                   <div className='addguestpopupMenu' style={{ top: popupPosition.top, left: popupPosition.left }}>
                     {/* Add your menu items here */}
-                    <div className='addguestpopupMenuitem'><p>adults</p> <div className='addguestpopupMenuiteaddminus'><IoIosRemoveCircleOutline size={25} onClick={() => decrementCount('adults')} className='popupaddminusicon'/><p>{adultsCount}</p><IoAddCircleOutline size={25} onClick={() => incrementCount('adults')} className='popupaddminusicon'/></div></div>
+                    <div className='addguestpopupMenuitem'><p>adults</p> <div className='addguestpopupMenuiteaddminus'><IoIosRemoveCircleOutline size={25} onClick={() => decrementCount('adults')} className='popupaddminusicon'/><p >{adultsCount}</p><IoAddCircleOutline size={25} onClick={() => incrementCount('adults')} className='popupaddminusicon'/></div></div>
                     <div className='addguestpopupMenuitem'><p>childrens</p> <div className='addguestpopupMenuiteaddminus'><IoIosRemoveCircleOutline size={25} onClick={() => decrementCount('children')} className='popupaddminusicon' /><p>{childrenCount}</p><IoAddCircleOutline size={25} onClick={() => incrementCount('children')} className='popupaddminusicon'/></div></div>
                     <div className='addguestpopupMenuitem'><p>pets</p> <div className='addguestpopupMenuiteaddminus'><IoIosRemoveCircleOutline size={25} onClick={() => decrementCount('pets')} className='popupaddminusicon' /><p>{petsCount}</p><IoAddCircleOutline size={25} onClick={() => incrementCount('pets')} className='popupaddminusicon'/></div></div>
                     {/* ... */}
@@ -174,19 +228,19 @@ export default function reservationcard({price}){
                   {
                      selectedDateRange[0]?
                      ( 
-                      <>
+                       <>
                       <div className='reservationCardCalculationsconatiner'>
                         <h1>Total amount</h1>
                         <div className='reservationCardCalculation'><h3>{numberofdays}x₹{price}=</h3> <h1>₹{totalprice}</h1></div>
                       </div>
 
-                      <div className="reservationButton">
+                      <div className="reservationButton" onClick={handleBooking}>
                           reserve
                        </div>
 
                       </>
                       
-                    ) : <Link href="#calender" className="reservationcheckavilabilitybutton">
+                      ) : <Link href="#calender" className="reservationcheckavilabilitybutton">
                           check availability
                     </Link >
                   }

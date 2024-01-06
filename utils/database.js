@@ -11,10 +11,11 @@ export const connectToDB = async () => {
   }
 
   try {
-    await mongoose.connect(process.env.MONGODB_URI, {
-      dbName: "next-app",
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+   await mongoose.connect(process.env.MONGODB_URI).then(() => {
+      console.log(`Connected successfully to MongoDB`);
+    }).catch((err) => {
+      console.log(err);
+      console.log('MongoDB connection failed');
     })
 
     isConnected = true;

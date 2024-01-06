@@ -26,6 +26,9 @@ const userDetailsSchema=Schema({
     required:true
   },
 
+},{
+  timestamps:true
+
 });
 
 
