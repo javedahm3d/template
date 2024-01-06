@@ -6,7 +6,7 @@ export default function Identity(){
     return(
         <>
         <section className="identitysection">
-        <h1 className='identityTitle'>Explore what sets an Nirvana residence apart</h1>
+        <h1 className='identityTitle'>Explore what sets a codemonkey residence apart</h1>
             <div className="identityContentcontainer">
                  <div className="identityImage">
                 <Image src='/h2.jpg' alt='villa image' layout='fill' objectFit='cover'/>

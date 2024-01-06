@@ -1,0 +1,85 @@
+.personalInfoScreen{
+    padding: 30px;
+}
+
+.profileScreenTitle{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(99, 99, 99);
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.editButton{
+    color: black;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding-right: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.personalInfoItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+    max-width: 400px;
+    margin-bottom: 15px;
+
+}
+
+.profilePageTextArea{
+    padding: 6px 10px;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: rgb(243, 240, 240);
+    height: 40px;   
+    min-width: 300px; 
+    max-width: 600px;
+    resize: none;
+    color: gray;
+
+}
+
+.editenable{
+    border: 1px solid blue;
+    color: black;
+    background-color: azure;
+}
+
+.joiningdate{
+    padding: 20px 0px;
+}
+
+.bookingcountCard{
+    margin-top: 30px;
+    width: 300px;
+    height: 130px;
+    background-color: rgb(200, 245, 245);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bookingcountheader{
+    font-size: 16px;
+    color: gray;
+}
+
+.bookingcount{
+    font-size: 65px;
+    font-weight: 300;
+    color: gray;
+}

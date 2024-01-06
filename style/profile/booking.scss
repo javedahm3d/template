@@ -1,0 +1,38 @@
+.bookingCard{
+    width: 90%;
+    height: 150px;
+    background-color: rgba(174, 241, 174, 0.6);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bookingCardDetails{
+    width: 50%;
+}
+
+.savecardreservedate{
+    padding-top: 20px;
+}
+
+.bookingdates{
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(66, 66, 66);
+}
+
+.bookingcardbutton{
+   align-self: flex-end;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   padding: 6px;
+
+}
+
+.bookingCardremoveButton{
+    padding: 6px 10px;
+    display: flex;
+    background-color: red;
+    border-radius: 5px;
+}

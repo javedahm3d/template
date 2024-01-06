@@ -53,7 +53,7 @@ export default function reservationcard({price}){
     const screenWidth = window.innerWidth;
     if (screenWidth <= 1200) {
         setreservationCardpostion('');
-      } else if (window.scrollY >= 320 && window.scrollY <= 1250) {
+      } else if (window.scrollY >= 400 && window.scrollY <= 1250) {
         setreservationCardpostion('fixed');
       } else if (window.scrollY > 1250) {
         setreservationCardpostion('absolute');

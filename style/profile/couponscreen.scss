@@ -1,0 +1,54 @@
+.couponsScreen{
+    padding: 20px 60px;
+    height: 92%;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+}
+
+.profilePageTitle{
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 500;
+    color: gray;
+}
+
+.couponCard{
+    display: flex;
+    width: 100%;
+}
+
+.leftdicountbar{
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    background-color: red;
+    padding: 15px 5px;
+    width: 5%;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.couponbody{
+    width: 95%;
+    border: 1px dashed rgba(148, 148, 148, 0.915);
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: azure;
+}
+
+.coupontitlecontainer{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.apply{
+    cursor: pointer;
+}
