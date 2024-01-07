@@ -3,7 +3,7 @@ import Calendar from "react-calendar";
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import {ToastContainer,toast } from 'react-toastify';
-import { useDateContext } from '../details/[details]/datecontext';
+import { useDateContext } from '../details/[id]/datecontext';
 // import Month from 'react-calendar/dist/cjs/YearView/Month';
 
 

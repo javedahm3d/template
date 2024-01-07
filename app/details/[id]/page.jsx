@@ -14,10 +14,10 @@ export const metadata = {
   description: 'codemonkey details page',
 }
 
-
-
-export default function Home() {
+export default function Home({params}) {
+  console.log("villa url" , params.id)
   return (
+   
     <Layout>
       <div className="detailsPageConatiner">
         <VillaImageSection/>

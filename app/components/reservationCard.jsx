@@ -6,7 +6,7 @@ import { IoAddCircleOutline } from "react-icons/io5";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useDateContext } from '../details/[details]/datecontext';
+import { useDateContext } from '../details/[id]/datecontext';
 import { useSession } from "next-auth/react";
 
 
