@@ -26,6 +26,11 @@ const villaDetailsSchema=Schema({
     require: true
   },
 
+  bedRoomCount:{
+    type: Number,
+    require: true
+  },
+
   bedCount:{
     type: Number,
     require: true
@@ -41,20 +46,48 @@ const villaDetailsSchema=Schema({
     required: true 
   },
 
+  longitude:{
+    type: String,
+    required: true 
+  },
+
+  latitude:{
+    type: String,
+    required: true 
+  },
+
   villaImages: {
     type: [String], 
     required: true,
   },
 
+  labels: {
+    type: [String], 
+    required: true,
+  },
+
   amenities: {
-    pool: { type: Boolean, required: true },
-    wifi: { type: Boolean, required: true },
+    mountainView: { type: Boolean, required: true },
+    chef: { type: Boolean, required: true },
     kitchen: { type: Boolean, required: true },
-    barbeque: { type: Boolean, required: true },
-    pets: { type: Boolean, required: true },
-    tv: { type: Boolean, required: true },
+    bath: { type: Boolean, required: true },
+    fireExtinguisher: { type: Boolean, required: true },
+    petsAllowed: { type: Boolean, required: true },
+    smokingAllowed: { type: Boolean, required: true },
+    privatePool: { type: Boolean, required: true },
+    publicPool: { type: Boolean, required: true },
     garden: { type: Boolean, required: true },
     parking: { type: Boolean, required: true },
+    hotWater: { type: Boolean, required: true },
+    firstAidKit: { type: Boolean, required: true },
+    heating: { type: Boolean, required: true },
+    boardGames: { type: Boolean, required: true },
+    wifi: { type: Boolean, required: true },
+    tv: { type: Boolean, required: true },
+    securityCamera: { type: Boolean, required: true },
+    airConditioning: { type: Boolean, required: true },
+    cookingBasics: { type: Boolean, required: true },
+    smokeAlarm: { type: Boolean, required: true },    
   },
 },{
   timestamps:true

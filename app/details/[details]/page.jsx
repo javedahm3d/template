@@ -14,6 +14,8 @@ export const metadata = {
   description: 'codemonkey details page',
 }
 
+
+
 export default function Home() {
   return (
     <Layout>

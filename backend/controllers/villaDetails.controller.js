@@ -8,25 +8,27 @@ const { Villa } = require("../model/villaDetails.model");
 exports.addVilla = async (req, res) => {
     
     const {
-        name,
-        description,
-        location,
-        maxPerson,
-        rent,
-        roomType,
-        villaImages,
-        amenities
+        villa
       } = req.body;
       
       console.log({
-        name,
-        description,
-        maxPerson,
-        rent,
-        roomType,
-        villaImages,
-        amenities
+        villa
       });
+
+      const name = villa.name;
+      const description = villa.description;
+      const location = villa.location;
+      const maxPerson = villa.maxPerson;
+      const rent = villa.rent;
+      const bedRoomCount = villa.bedRoomCount;
+      const bedCount = villa.bedCount;
+      const bathroomCount = villa.bathroomCount;
+      const roomType = villa.roomType;
+      const longitude = villa.longitude;
+      const latitude = villa.latitude;
+      const villaImages = villa.villaImages;
+      const labels = villa.labels;
+      const amenities = villa.amenities;
       
       try {
         if (
@@ -35,8 +37,14 @@ exports.addVilla = async (req, res) => {
           !location ||
           !maxPerson ||
           !rent ||
+          !bedRoomCount ||
+          !bedCount ||
+          !bathroomCount ||
           !roomType ||
+          !longitude ||
+          !latitude ||
           !villaImages ||
+          !labels ||
           !amenities
         ) {
           return res.status(httpStatusCodes[400].code).json(
@@ -49,8 +57,14 @@ exports.addVilla = async (req, res) => {
           location,
           maxPerson,
           rent,
-          roomType,
-          villaImages,
+          bedRoomCount, 
+          bedCount, 
+          bathroomCount, 
+          roomType, 
+          longitude, 
+          latitude, 
+          villaImages, 
+          labels, 
           amenities
         });
       
@@ -75,11 +89,30 @@ exports.addVilla = async (req, res) => {
 exports.displayVilla = async (req, res) => {
   try {
     const allVillas = await Villa.find();
-    console.log(allVillas)
+    // console.log(allVillas[2].villaImages[0])
+    
+const villa = []
+
+    for(var i=0;i<allVillas.length;i++){
+      const currentVilla = allVillas[i];
+
+      villa.push({
+        id: currentVilla._id,
+        name: currentVilla.name,
+        image: currentVilla.villaImages[0],
+        price: currentVilla.rent,
+        location: currentVilla.location,
+        rooms: currentVilla.bedRoomCount,
+        labels: currentVilla.labels,
+      });
+    }
+
+    console.log(villa)
+
     return res
     .status(httpStatusCodes[200].code)
     .json(
-      formResponse(httpStatusCodes[200].code, allVillas));  
+      formResponse(httpStatusCodes[200].code, villa));  
     } catch (error) {
     console.error('Error fetching villas:', error);
     return res

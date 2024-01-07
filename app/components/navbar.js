@@ -14,7 +14,7 @@ const Navbar = ({ setNavbarvalue = false }) => {
   const { data: session } = useSession();
   const [providers, setProviders] = useState(null);
   //   const [toggleDropdown, settoggelDropdown] = useState(false);
-  console.log(session)
+  // console.log(session)
   useEffect(() => {
     (async () => {
       const res = await getProviders();

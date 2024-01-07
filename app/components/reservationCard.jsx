@@ -171,7 +171,7 @@ export default function reservationcard({price}){
                   if (data.message == "Created Successful") {
                     console.log("Success")
                     alert("Booking Successfull")
-                    // navigate("/successBooking");                    
+                    // navigate("/successBooking");
                   }
                   if (data.flag == "Internal Server error") {
                     alert("Error Try Again");
