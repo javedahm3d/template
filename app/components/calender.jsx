@@ -81,7 +81,7 @@ export default function calendar({ onDateSelect }){
                 minDate={new Date()}
                 tileDisabled={tileDisabled}   
                 showDoubleView     
-                minDetail ={'Month'}   
+                // minDetail ={'Month'}   
                 goToRangeStartOnSelect ={false}
            /> 
         </>

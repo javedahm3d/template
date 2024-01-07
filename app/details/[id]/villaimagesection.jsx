@@ -6,7 +6,9 @@ import React, { useState } from 'react'
 import Modal from 'react-modal'
 import ShowPhotos from "./showPhotos";
 
-export default function VillaImageSection(){
+export default function VillaImageSection({imageList}){
+
+  console.log(imageList)
     const [isOpen, setIsOpen] = useState(false)
 
     return(
@@ -16,43 +18,54 @@ export default function VillaImageSection(){
           <div className="imageconatiner">
             <div className="maindetailsimage">
               <Image
-                src="/h1.jpg"
+                src={imageList[0]}
                 alt="villa image"
                 fill={true}
+                sizes="(max-width: 1000px) 100vw, (max-width: 100px) 50vw, 33.3vw"
                 objectFit="cover"
+                layout="reponsive"
               />
             </div>
             <div className="maindetailsimagesecondary">
               <div className="maindetailsimagesecondaryinner">
                 <Image
-                  src="/h2.jpg"
+                  src={imageList[1]}
                   alt="villa image"
                   fill={true}
+                  sizes="(max-width: 1000px) 100vw, (max-width: 100px) 50vw, 33.3vw"
                   objectFit="cover"
+                  layout="reponsive"
+                  
                 />
               </div>
               <div className="maindetailsimagesecondaryinner">
                 <Image
-                  src="/h3.jpg"
+                  src={imageList[2]}
                   alt="villa image"
                   fill={true}
+                  sizes="(max-width: 1000px) 100vw, (max-width: 100px) 50vw, 33.3vw"
                   objectFit="cover"
+                  layout="reponsive"
                 />
               </div>
               <div className="maindetailsimagesecondaryinner">
                 <Image
-                  src="/h4.jpg"
+                  src={imageList[3]}
                   alt="villa image"
                   fill={true}
+                  sizes="(max-width: 1000px) 100vw, (max-width: 100px) 50vw, 33.3vw"
                   objectFit="cover"
+                  layout="reponsive"
                 />
               </div>
               <div className="maindetailsimagesecondaryinner">
                 <Image
-                  src="/h5.jpg"
+                  src={imageList[4]}
                   alt="villa image"
                   fill={true}
+                  sizes="(max-width: 1000px) 100vw, (max-width: 100px) 50vw, 33.3vw"
                   objectFit="cover"
+                  layout="reponsive"
                 />
               </div>
             </div>

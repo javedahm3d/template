@@ -14,13 +14,21 @@ export const metadata = {
   description: 'codemonkey details page',
 }
 
+const imageList = [
+  'https://gos3.ibcdn.com/3a2cd47604b611ec8d520a58a9feac02.jpg',
+  'https://media.assettype.com/fortuneindia/2021-09/933967f8-afcb-4155-ba3d-b5189587306f/Luxury_villas_1.jpg?w=1200&h=768',
+  'https://luxebook.in/wp-content/uploads/2021/07/Screen-Shot-2021-07-25-at-9.48.31-PM-e1627230049789.png',
+  'https://media-cdn.tripadvisor.com/media/vr-splice-j/0c/03/2b/ca.jpg',
+  'https://gos3.ibcdn.com/3a2cd47604b611ec8d520a58a9feac02.jpg',
+]
+
 export default function Home({params}) {
   console.log("villa url" , params.id)
   return (
    
     <Layout>
       <div className="detailsPageConatiner">
-        <VillaImageSection/>
+        <VillaImageSection imageList={imageList}/>
         <DateProvider>
           <div className="detailspagelowerbody">
             {/* in same directory */}
@@ -53,6 +61,7 @@ export default function Home({params}) {
     </Layout>
   );
 }
+
 
 const reviewcardata=[
   {
