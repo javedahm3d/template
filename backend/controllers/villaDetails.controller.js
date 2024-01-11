@@ -2,6 +2,8 @@ const httpStatusCodes = require("../constants/http-status-codes");
 const { formResponse } = require("../utils/helper");
 // const jwt = require("jsonwebtoken");
 const { Villa } = require("../model/villaDetails.model");
+const mongoose = require('mongoose');
+const ObjectId = mongoose.Types.ObjectId;
 
 
 
@@ -89,7 +91,6 @@ exports.addVilla = async (req, res) => {
 exports.displayVilla = async (req, res) => {
   try {
     const allVillas = await Villa.find();
-    // console.log(allVillas[2].villaImages[0])
     
 const villa = []
 
@@ -119,4 +120,30 @@ const villa = []
     .status(httpStatusCodes[500].code)
     .json(formResponse(httpStatusCodes[500].code, "Internal Server Error"));
     }
+}
+
+
+exports.displayVillaDetails = async (req, res) => {
+
+  const villaId = req.query.villaId
+  console.log({villaId})
+  var V_id = new ObjectId(villaId);
+  
+  try {
+    const villaDetails = await Villa.find({ _id: V_id });
+    // console.log(villaDetails[0].amenities)
+    
+
+    return res
+    .status(httpStatusCodes[200].code)
+    .json(
+      formResponse(httpStatusCodes[200].code, villaDetails));  
+    } catch (error) {
+    console.error('Error fetching villas:', error);
+    return res
+    .status(httpStatusCodes[500].code)
+    .json(formResponse(httpStatusCodes[500].code, "Internal Server Error"));
+    }
+
+
 }

@@ -5,7 +5,18 @@ import Listingcard from "../components/listingcard";
 import React, { useState, useEffect } from 'react';
 
 
-export default function Home() {
+// export async function getStaticProps() {
+//   const response = await fetch("https://api.example.com/data");
+//   const data = await response.json();
+
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// }
+
+const Home = () => {
 
   const MemoizedListingCard = React.memo(Listingcard);
   const [count, setCount] = useState(0);
@@ -122,3 +133,5 @@ export default function Home() {
 //     labels: ["mountain", "beach"],
 //   },
 // ];
+
+export default Home;
