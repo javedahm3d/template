@@ -7,8 +7,6 @@ import Modal from 'react-modal'
 import ShowPhotos from "./showPhotos";
 
 export default function VillaImageSection({imageList}){
-
-  console.log(imageList)
     const [isOpen, setIsOpen] = useState(false)
 
     return(
