@@ -1,4 +1,7 @@
-import carousel from "../components/carousel";
+import dynamic from "next/dynamic";
+
+const DynamicCrousel = dynamic(() => import("@/app/components/carousel"), { ssr: false });
+
 
 export default function reviews(){
     return(
@@ -11,7 +14,7 @@ export default function reviews(){
             </h1>
             </div>
 
-            {carousel()}
+            <DynamicCrousel/>
 
         </div>
     )

@@ -1,5 +1,4 @@
-
-"use client";
+'use client'
 
 import React, { useEffect } from 'react';
 import "@/style/slider.css";
@@ -10,8 +9,7 @@ import { IoIosPricetags } from "react-icons/io";
 import { IoBedOutline } from "react-icons/io5";
 import Image from "next/image";
 
-
-const Slider = () => {
+export default function Slider(){
     const data = [
       {
         imageUrl: '/h1.jpg',
@@ -124,5 +122,3 @@ const Slider = () => {
       </div>
     );
   };
-  
-  export default Slider;

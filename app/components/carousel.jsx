@@ -1,3 +1,4 @@
+"use client";
 import card from "./card";
 import Slider from "react-slick";
 import '@/style/carousel.css'
