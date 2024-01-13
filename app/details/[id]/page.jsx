@@ -22,9 +22,10 @@ const imageList = [
 ]
 
 export default function Home(context) {  
-  const  query  = context.params.id;
-  const  id  = context.searchParams;
+  const  id  = context.params.id;
+  const  query  = context.searchParams;
   console.log(query)
+  console.log(query.discout)
   console.log(id)
   return (
    
