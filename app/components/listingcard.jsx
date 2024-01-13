@@ -31,7 +31,8 @@ export default function listingcard({image, name , price , location , rooms , la
                 <p className='listingcardinfo'><MdOutlineBedroomChild /><span>{rooms} bedroom</span></p>
                 <p className='listingcardinfo'><FaIndianRupeeSign />{price}</p>
             </div>
-            <Link href={`../details/${id}`} className='listingcardbutton'>view details</Link>
+            {/* <Link href={`../details/${id}+abc+123c`} className='listingcardbutton'>view details</Link> */}
+            <Link href={{ pathname: `../details/${id}`, query: { type: 'luxary' } }} className='listingcardbutton'>view details</Link>
             </div>
             
         </div>

@@ -6,13 +6,12 @@ import Staydetails from "./staydetails";
 import { DateProvider } from "./datecontext";
 import VillaReviewCard from "@/app/components/villareviewcard";
 import VillaImageSection from "./villaimagesection";
-
 const Map = dynamic(() => import("@/app/components/map"), { ssr: false });
 
-export const metadata = {
-  title: 'details | CodeMonkey',
-  description: 'codemonkey details page',
-}
+// export const metadata = {
+//   title: 'details | CodeMonkey',
+//   description: 'codemonkey details page',
+// }
 
 const imageList = [
   'https://gos3.ibcdn.com/3a2cd47604b611ec8d520a58a9feac02.jpg',
@@ -22,8 +21,11 @@ const imageList = [
   'https://gos3.ibcdn.com/3a2cd47604b611ec8d520a58a9feac02.jpg',
 ]
 
-export default function Home({params}) {
-  console.log("villa url" , params.id)
+export default function Home(context) {  
+  const  query  = context.params.id;
+  const  id  = context.searchParams;
+  console.log(query)
+  console.log(id)
   return (
    
     <Layout>

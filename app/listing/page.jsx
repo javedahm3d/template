@@ -1,8 +1,9 @@
-'use client'
+// 'use client'
 import "@/style/listing.scss";
 import categorybar from "../components/categorybar";
 import Listingcard from "../components/listingcard";
-import React, { useState, useEffect } from 'react';
+import React from "react";
+// import React, { useState, useEffect } from 'react';
 
 
 // export async function getStaticProps() {
@@ -19,49 +20,55 @@ import React, { useState, useEffect } from 'react';
 const Home = () => {
 
   const MemoizedListingCard = React.memo(Listingcard);
-  const [count, setCount] = useState(0);
-  const [villaData, setVillaData] = useState();
+  // const [count, setCount] = useState(0);
+  // const [villaData, setVillaData] = useState();
 
-  React.useEffect(() => {
-    if(!count){
-      handleDisplayVilla();
-      setCount(1);
-      console.log({count})
-    }
-  }, []);
+  // React.useEffect(() => {
+  //   if(!count){
+  //     handleDisplayVilla();
+  //     setCount(1);
+  //     console.log({count})
+  //   }
+  // }, []);
 
-  const handleDisplayVilla = () =>{
-    console.log("In Display Villas")
+  // const handleDisplayVilla = () =>{
+  //   console.log("In Display Villas")
 
-      try {
-          fetch(
-              `http://localhost:3001/api/v1/villa/display`,
-                {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                  },
+      // try {
+      //     fetch(
+      //         `http://localhost:3001/api/v1/villa/display`,
+      //           {
+      //             method: "POST",
+      //             headers: {
+      //               "Content-Type": "application/json",
+      //               Accept: "application/json",
+      //             },
                 
-                })
-                .then((res) => res.json())
-                .then((data) => {
-                  console.log(data.data);
-                  setVillaData(data.data);
-                  console.log(villaData);
-                  if (data.message == "Created Successful") {
-                    console.log("Success")
-                    alert("Booking Successfull")
-                    // navigate("/successBooking");
-                  }
-                  if (data.flag == "Internal Server error") {
-                    alert("Error Try Again");
-                  }
-            });
-      } catch (err) {
-            console.error("Error:", err);
-      }
-  };
+      //           })
+      //           .then((res) => res.json())
+      //           .then((data) => {
+      //             console.log(data.data);
+      //             setVillaData(data.data);
+      //             console.log(villaData);
+      //             if (data.message == "Created Successful") {
+      //               console.log("Success")
+      //               alert("Booking Successfull")
+      //               // navigate("/successBooking");
+      //             }
+      //             if (data.flag == "Internal Server error") {
+      //               alert("Error Try Again");
+      //             }
+      //       });
+      // } catch (err) {
+      //       console.error("Error:", err);
+      // }
+  // };
+
+//   if(!count){
+//     handleDisplayVilla();
+//     count =1;
+//     console.log({count})
+//  }
 
   return (
     <main className="listingloadingscreen">
@@ -71,7 +78,8 @@ const Home = () => {
 
         <div className="listingpage">
           <div className="listingpagecontainer">
-            {villaData && villaData.map((d) => (
+            {data.map((d) => (
+            // {villaData && villaData.map((d) => (
               <React.Fragment key={d.id}>         
                  <MemoizedListingCard
                  image={d.image}
@@ -94,16 +102,17 @@ const Home = () => {
 
 // {image, name , price , location , rooms}
 
-// const data = [
-//   {
-//     id:1,
-//     name: "Luxury pool villa",
-//     image: "/h1.jpg",
-//     price: "25000",
-//     location: "Curtorim, Goa",
-//     rooms: "3",
-//     labels: ["mountain", "beach"],
+const data = [
+  {
+    id:1,
+    name: "Luxury pool villa",
+    image: "/h1.jpg",
+    price: "25000",
+    location: "Curtorim, Goa",
+    rooms: "3",
+    labels: ["mountain", "beach"],
     
+<<<<<<< HEAD
 //   },
 //   {
 //     id:2,
@@ -135,3 +144,34 @@ const Home = () => {
 // ];
 
 export default Home;
+=======
+  },
+  {
+    id:2,
+    name: "Luxury pool villa",
+    image: "/h1.jpg",
+    price: "25000",
+    location: "Curtorim, Goa",
+    rooms: "3",
+    labels: ["mountain", "beach"],
+  },
+  {
+    id:3,
+    name: "Luxury pool villa",
+    image: "/h1.jpg",
+    price: "25000",
+    location: "Curtorim, Goa",
+    rooms: "3",
+    labels: ["mountain", "beach"],
+  },
+  {
+    id:4,
+    name: "Luxury pool villa",
+    image: "/h1.jpg",
+    price: "25000",
+    location: "Curtorim, Goa",
+    rooms: "3",
+    labels: ["mountain", "beach"],
+  },
+];
+>>>>>>> tempbranch

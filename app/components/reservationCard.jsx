@@ -15,7 +15,7 @@ export default function reservationcard({price}){
   const [numberofdays, setnumberofdays] = useState(0);
   const [totalprice, settotalprice] = useState(0);
 
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -66,9 +66,13 @@ export default function reservationcard({price}){
 
 
   const calculateAndSetNumberOfNights = (startDate, endDate) => {
-    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-    const daysDifference = Math.round(Math.abs((startDate - endDate) / oneDay));
+    const oneDay = 24 * 60 * 60 * 1000; 
+
+    const formattedStartDate = new Date(startDate);
+    const formattedEndDate = new Date(endDate);
+    const daysDifference = Math.round(Math.abs((formattedStartDate - formattedEndDate) / oneDay))+1;
     setnumberofdays(daysDifference)
+    console.log(daysDifference)
     settotalprice(daysDifference*price)
   };
 
@@ -137,6 +141,11 @@ export default function reservationcard({price}){
     return guestsArray.join(', ');
   };
 
+  const formatDate = (date) => {
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    return new Date(date).toLocaleDateString('en-GB', options);
+  };
+
 
 
 
@@ -145,8 +154,10 @@ export default function reservationcard({price}){
     
     
   const booking = {
-      "checkIn": selectedDateRange[0]?.toLocaleDateString('en-IN'),
-      "checkOut": selectedDateRange[1]?.toLocaleDateString('en-IN'),
+      // "checkIn": selectedDateRange[0]?.toLocaleDateString('en-IN'),
+      // "checkOut": selectedDateRange[1]?.toLocaleDateString('en-IN'),
+      "checkIn": selectedDateRange[0],
+      "checkOut": selectedDateRange[1],
       "total": totalprice,
       "type": "AC",
     }
@@ -192,11 +203,11 @@ export default function reservationcard({price}){
 
                   <Link href="#calender"  className="reservationcheckin">
                         <h2>CHECK IN</h2>
-                        <h1>{selectedDateRange[0]?(selectedDateRange[0]?.toLocaleDateString('en-IN')): 'add date'}</h1>
+                        <h1>{selectedDateRange[0]?formatDate(selectedDateRange[0]): 'add date'}</h1>
                     </Link >
                     <Link href="#calender" className="reservationcheckout">
                         <h2>CHECK OUT</h2>
-                        <h1 >{selectedDateRange[1]?(selectedDateRange[1]?.toLocaleDateString('en-IN')): 'add date'}</h1>
+                        <h1 >{selectedDateRange[1]?formatDate(selectedDateRange[1]): 'add date'}</h1>
                     </Link>
                 </div>
                 <div className="reservationguests" onClick={togglePopup} id="addGuestButton">
