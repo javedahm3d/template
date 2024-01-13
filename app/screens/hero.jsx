@@ -29,7 +29,7 @@ export default function heroPage(){
                     
                 </div>
                
-               <Link href="../listing">
+               <Link href="../pages/list">
                <button className='button'>
                     Book Now
                 </button>

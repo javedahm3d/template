@@ -127,11 +127,28 @@ exports.displayVillaDetails = async (req, res) => {
 
   const villaId = req.query.villaId
   console.log({villaId})
-  var V_id = new ObjectId(villaId);
+  console.log("Length")
+  console.log(villaId.length)
+  if(villaId.length < 24){
+    return res
+    .status(httpStatusCodes[500].code)
+    .json(
+      formResponse(httpStatusCodes[500].code, "Villa ID Format Incorrect"));  
+    }
+    
+    var V_id = new ObjectId(villaId);
   
   try {
     const villaDetails = await Villa.find({ _id: V_id });
     // console.log(villaDetails[0].amenities)
+    
+    if(!villaDetails.length){
+      console.log("Doesnt exsist")
+      return res
+    .status(httpStatusCodes[500].code)
+    .json(
+      formResponse(httpStatusCodes[500].code, "Villa doesnt exsist"));  
+    }
     
 
     return res
