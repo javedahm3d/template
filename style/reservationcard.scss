@@ -107,7 +107,8 @@
    margin-top: 10px;
    width: 90%;
    height: 50px;
-   background-color: rgb(207, 41, 41);
+   background: rgb(174,75,0);
+   background: linear-gradient(15deg, rgba(174,75,0,1) 1%, rgba(255,0,22,1) 100%);
    border-radius: 10px;
    display: flex;
    align-items: center;
@@ -136,7 +137,8 @@
     margin-top: 10px;
    width: 90%;
    height: 50px;
-   background-color: green;
+//    background-color: green;
+background: linear-gradient(15deg, rgba(46,113,11,1) 0%, rgba(31,158,18,1) 100%);
    border-radius: 10px;
    display: flex;
    align-items: center;
