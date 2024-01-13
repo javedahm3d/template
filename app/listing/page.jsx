@@ -112,39 +112,6 @@ const data = [
     rooms: "3",
     labels: ["mountain", "beach"],
     
-<<<<<<< HEAD
-//   },
-//   {
-//     id:2,
-//     name: "Luxury pool villa",
-//     image: "/h1.jpg",
-//     price: "25000",
-//     location: "Curtorim, Goa",
-//     rooms: "3",
-//     labels: ["mountain", "beach"],
-//   },
-//   {
-//     id:3,
-//     name: "Luxury pool villa",
-//     image: "/h1.jpg",
-//     price: "25000",
-//     location: "Curtorim, Goa",
-//     rooms: "3",
-//     labels: ["mountain", "beach"],
-//   },
-//   {
-//     id:4,
-//     name: "Luxury pool villa",
-//     image: "/h1.jpg",
-//     price: "25000",
-//     location: "Curtorim, Goa",
-//     rooms: "3",
-//     labels: ["mountain", "beach"],
-//   },
-// ];
-
-export default Home;
-=======
   },
   {
     id:2,
@@ -174,4 +141,5 @@ export default Home;
     labels: ["mountain", "beach"],
   },
 ];
->>>>>>> tempbranch
+
+export default Home;
