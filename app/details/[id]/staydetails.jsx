@@ -13,7 +13,6 @@ import { useEffect, useState } from "react";
 import Calendar from "@/app/components/calender";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
-import Image from "next/image";
 
 export default function staydetails() {
   const [saveicon, setsaveicon] = useState(false);
@@ -159,10 +158,9 @@ export default function staydetails() {
               show all amenities
             </button>
           </div>
-
-          <div className="calender" id="calender">
-            <Calendar />
-          </div>
+            <div id="calender" className="calender">
+              <Calendar/>
+            </div>
         </div>
       </div>
       <dialog id="showmoremodal" className="modal">
