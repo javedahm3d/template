@@ -1,29 +1,30 @@
 const {Schema,model}=require('mongoose')
 
 const userDetailsSchema=Schema({
-  u_name: { 
+  username: { 
     type: String,
     required: true 
     },
 
-  u_email:{
+  email:{
     type: String,
-    require: true
+    required: true
   },
 
   u_password:{
     type: String,
-    require: true
   },
 
   u_dob:{
     type:String,
-    required:true
   },
 
   u_phoneNo:{
     type:String,
-    required:true
+  },
+
+  wishlist: {
+    type: [String], 
   },
 
 },{
@@ -34,6 +35,8 @@ const userDetailsSchema=Schema({
 
 // module.exports.usersDetails =model('usersDetails',userDetailsSchema)
 
-const UsersDetails = model('usersDetails', userDetailsSchema); 
+// const UsersDetails = model('users', userDetailsSchema); 
 
-module.exports = UsersDetails; 
+// module.exports = UsersDetails; 
+
+module.exports.UsersDetails =model('users',userDetailsSchema)
