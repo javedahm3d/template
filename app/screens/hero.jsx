@@ -29,7 +29,7 @@ export default function heroPage(){
                     
                 </div>
                
-               <Link href="../pages/list">
+               <Link href={{ pathname: '../listing', query: { type: 'all'} }}>
                <button className='button'>
                     Book Now
                 </button>

@@ -3,12 +3,12 @@ import categorybar from "../components/categorybar";
 import Listingcard from "../components/listingcard";
 import React from "react";
 
-const Home = () => {
+const Home = (context) => {
 
   const MemoizedListingCard = React.memo(Listingcard);
   return (
     <main className="listingloadingscreen">
-        {categorybar()}
+        {categorybar(context)}
         {/* <React.Fragment> */}
         <div className="h-4"></div>
 
