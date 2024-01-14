@@ -9,18 +9,19 @@ import { BsTree } from "react-icons/bs";
 import { IoDiamondOutline } from "react-icons/io5";
 import Categoryicon from "./categoryicon";
 
-export default function categorybar() {
+export default function categorybar(context) {
+
   return (
     <div className="categorybar">
       <div className="category">
-      <Categoryicon icon={<TbBeach size={30} />} name={'beach'} />
-      <Categoryicon icon={<LiaMountainSolid size={30} />} name={'mountains'} />
-      <Categoryicon icon={<PiCactusLight size={30} />} name={'desert'} />
-      <Categoryicon icon={<HiOutlineHomeModern size={30} />} name={'modern'} />
-      <Categoryicon icon={<IoIosSnow size={30} />} name={'snow'} />
-      <Categoryicon icon={<LiaSwimmerSolid size={30} />} name={'pool'} />
-      <Categoryicon icon={<BsTree size={30} />} name={'forest'} />
-      <Categoryicon icon={<IoDiamondOutline size={30} />} name={'luxury'} />
+      <Categoryicon icon={<TbBeach size={27} />} name={'beach'} context={context}/>
+      <Categoryicon icon={<LiaMountainSolid size={27} />} name={'mountains'} context={context}/>
+      <Categoryicon icon={<PiCactusLight size={27} />} name={'desert'} context={context} />
+      <Categoryicon icon={<HiOutlineHomeModern size={27} />} name={'modern'} context={context}/>
+      <Categoryicon icon={<IoIosSnow size={27} />} name={'snow'} context={context}/>
+      <Categoryicon icon={<LiaSwimmerSolid size={27} />} name={'pool'} context={context}/>
+      <Categoryicon icon={<BsTree size={27} />} name={'forest'} context={context}/>
+      <Categoryicon icon={<IoDiamondOutline size={27} />} name={'luxury'} context={context}/>
       </div>
     </div>
   );
