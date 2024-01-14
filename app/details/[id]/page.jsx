@@ -21,24 +21,28 @@ const imageList = [
   'https://gos3.ibcdn.com/3a2cd47604b611ec8d520a58a9feac02.jpg',
 ]
 
-export default function Home(context) {  
+export default async function Home(context) {  
   const  id  = context.params.id;
   const  query  = context.searchParams;
   console.log(query)
   console.log(query.discout)
   console.log(id)
+  const response = await fetch(`http://localhost:3001/api/v1/villa/displayVillaDetails?villaId=${id}`);
+    const res = await response.json();
+    const data = res.data[0]
+    console.log(data)
   return (
    
     <Layout>
       <div className="detailsPageConatiner">
-        <VillaImageSection imageList={imageList}/>
+        <VillaImageSection imageList={data.villaImages}/>
         <DateProvider>
           <div className="detailspagelowerbody">
             {/* in same directory */}
-            <Staydetails />
+            <Staydetails data={data} />
 
             {/* reservationCard in components */}
-            <Reservationcard price={25000} />
+            <Reservationcard price={data.rent} villa_id={id} />
           </div>
         </DateProvider>
         <div className="maplocation">

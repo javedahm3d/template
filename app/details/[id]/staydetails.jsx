@@ -14,7 +14,7 @@ import Calendar from "@/app/components/calender";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 
-export default function staydetails() {
+export default function staydetails({data}) {
   const [saveicon, setsaveicon] = useState(false);
 
   function copyurl() {
@@ -86,7 +86,7 @@ export default function staydetails() {
         <div className="villadetails">
           <div className="villadetailstitleandfavoutirehareicons">
             <h1 className="villadetailstitle">
-              Entire villa in Curtorim, India
+              {data.name}
             </h1>
             <div className="villadetailsfavouriteandshare">
               <div onClick={togglesaveicon}>
@@ -101,7 +101,7 @@ export default function staydetails() {
             </div>
           </div>
           <h3 className="villaquickdetails">
-            12 guests. 4 bedrooms. 4 beds. 4 bathrooms
+            {data.maxPerson} guests. {data.bedRoomCount} bedrooms. {data.bedCount} beds. {data.bathroomCount} bathrooms
           </h3>
           <div className="villareview">
             <FaStar /> 4.2{" "}
@@ -120,7 +120,7 @@ export default function staydetails() {
           <hr />
           <div className="villadetaildescriptioncontainer">
             <div className="villadeatilsdescription">
-              <h2 className="villadeatilsdescriptioncontent">{content}</h2>
+              <h2 className="villadeatilsdescriptioncontent">{data.description}</h2>
               <div>
                 {showmore ? (
                   <button

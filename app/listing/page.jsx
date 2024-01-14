@@ -3,9 +3,14 @@ import categorybar from "../components/categorybar";
 import Listingcard from "../components/listingcard";
 import React from "react";
 
-const Home = (context) => {
+export default async function Home(context) {
 
   const MemoizedListingCard = React.memo(Listingcard);
+  const response = await fetch("http://localhost:3001/api/v1/villa/display");
+    const res = await response.json();
+    const data = res.data
+    console.log(data)
+
   return (
     <main className="listingloadingscreen">
         {categorybar(context)}
@@ -38,44 +43,43 @@ const Home = (context) => {
 
 // {image, name , price , location , rooms}
 
-const data = [
-  {
-    id:1,
-    name: "Luxury pool villa",
-    image: "/h1.jpg",
-    price: "25000",
-    location: "Curtorim, Goa",
-    rooms: "3",
-    labels: ["mountain", "beach"],
+// const data = [
+//   {
+//     id:1,
+//     name: "Luxury pool villa",
+//     image: "/h1.jpg",
+//     price: "25000",
+//     location: "Curtorim, Goa",
+//     rooms: "3",
+//     labels: ["mountain", "beach"],
     
-  },
-  {
-    id:2,
-    name: "Luxury pool villa",
-    image: "/h1.jpg",
-    price: "25000",
-    location: "Curtorim, Goa",
-    rooms: "3",
-    labels: ["mountain", "beach"],
-  },
-  {
-    id:3,
-    name: "Luxury pool villa",
-    image: "/h1.jpg",
-    price: "25000",
-    location: "Curtorim, Goa",
-    rooms: "3",
-    labels: ["mountain", "beach"],
-  },
-  {
-    id:4,
-    name: "Luxury pool villa",
-    image: "/h1.jpg",
-    price: "25000",
-    location: "Curtorim, Goa",
-    rooms: "3",
-    labels: ["mountain", "beach"],
-  },
-];
+//   },
+//   {
+//     id:2,
+//     name: "Luxury pool villa",
+//     image: "/h1.jpg",
+//     price: "25000",
+//     location: "Curtorim, Goa",
+//     rooms: "3",
+//     labels: ["mountain", "beach"],
+//   },
+//   {
+//     id:3,
+//     name: "Luxury pool villa",
+//     image: "/h1.jpg",
+//     price: "25000",
+//     location: "Curtorim, Goa",
+//     rooms: "3",
+//     labels: ["mountain", "beach"],
+//   },
+//   {
+//     id:4,
+//     name: "Luxury pool villa",
+//     image: "/h1.jpg",
+//     price: "25000",
+//     location: "Curtorim, Goa",
+//     rooms: "3",
+//     labels: ["mountain", "beach"],
+//   },
+// ];
 
-export default Home;

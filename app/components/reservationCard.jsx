@@ -10,7 +10,7 @@ import { useDateContext } from '../details/[id]/datecontext';
 import { useSession } from "next-auth/react";
 
 
-export default function reservationcard({price}){
+export default function reservationcard({price, villa_id}){
   const { selectedDateRange } = useDateContext();
   const [numberofdays, setnumberofdays] = useState(0);
   const [totalprice, settotalprice] = useState(0);
@@ -149,7 +149,7 @@ export default function reservationcard({price}){
 
 
 
-  const handleBooking = () =>{
+  const handleBooking = async ()  =>{
     console.log("In Handle Booking")
     
     
@@ -163,8 +163,8 @@ export default function reservationcard({price}){
     }
     console.log(booking)
       try {
-          fetch(
-              `http://localhost:3001/api/v1/booking?villaUID=657437fd43c7af7be63cd8b5`,
+          await fetch(
+              `http://localhost:3001/api/v1/booking?villaUID=${villa_id}`,
                 {
                   method: "POST",
                   headers: {
@@ -176,12 +176,18 @@ export default function reservationcard({price}){
                   }),
                 
                 })
-                .then((res) => res.json())
+                .then((res) => {
+                  if (!res.ok) {
+                    throw new Error(`HTTP error! Status: ${res.status}`);
+                  }
+                  return res.json();
+                })
                 .then((data) => {
                   console.log(data)
                   if (data.message == "Created Successful") {
                     console.log("Success")
                     alert("Booking Successfull")
+                    // Navigate after successfull booking 
                     // navigate("/successBooking");
                   }
                   if (data.flag == "Internal Server error") {

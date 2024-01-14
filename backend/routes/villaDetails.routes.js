@@ -7,7 +7,7 @@ const app = express();
 const villaDetailsRouter = Router();
 
 villaDetailsRouter.post("/api/v1/villa/add", addVilla);
-villaDetailsRouter.post("/api/v1/villa/display", displayVilla);
-villaDetailsRouter.post("/api/v1/villa/displayVillaDetails", displayVillaDetails);
+villaDetailsRouter.get("/api/v1/villa/display", displayVilla);
+villaDetailsRouter.get("/api/v1/villa/displayVillaDetails", displayVillaDetails);
 
 module.exports = villaDetailsRouter;

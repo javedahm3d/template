@@ -24,7 +24,7 @@ exports.booking = async (req, res) => {
     var V_id = new ObjectId(villaUID);
 
     const villaCount = await Villa.findOne({ _id: V_id });
-    // console.log(villaCount)
+    console.log(villaCount)
 
     if(!villaCount){
       return res.status(204).json(formResponse(httpStatusCodes[204].code, "Invalid Villa"));
@@ -62,8 +62,8 @@ exports.booking = async (req, res) => {
 
       console.log("Inserted")
     
-      return res.status(httpStatusCodes[201].code).json(
-        formResponse(httpStatusCodes[201].code, "Booking created successfully"));
+      return res.status(httpStatusCodes[200].code).json(
+        formResponse(httpStatusCodes[200].code, "Booking created successfully"));
 
     }catch (error) {
     console.error('Error Booking:', error);

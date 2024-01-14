@@ -111,7 +111,6 @@ const villa = []
     console.log(villa)
 
     return res
-    .status(httpStatusCodes[200].code)
     .json(
       formResponse(httpStatusCodes[200].code, villa));  
     } catch (error) {
