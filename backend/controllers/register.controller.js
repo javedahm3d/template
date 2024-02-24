@@ -9,16 +9,16 @@ function isValidEmail(email) {
 }
 
 exports.register = async (req, res) => {
-  const { username, email, u_password, u_dob, u_phoneNo } = req.body;
+  const { username, email, password, u_dob, u_phoneNo } = req.body;
   console.log(req.body)
 
-  if (!email || !u_password) {
+  if (!email || !password) {
     return res
       .status(httpStatusCodes[400].code)
       .json(formResponse(httpStatusCodes[400].code, "missing email or password"));
   }
 
-  if (u_password.length < 6) {
+  if (password.length < 6) {
     return res
       .status(httpStatusCodes[202].code)
       .json(
@@ -42,14 +42,15 @@ exports.register = async (req, res) => {
         .json(formResponse(httpStatusCodes[200].code, "User already exists"));
     }
 
-    const encryptedPassword = await bcrypt.hash(u_password, 10);
+    const encryptedPassword = await bcrypt.hash(password, 10);
 
     const newusersDetails = new UsersDetails({
       username: username,
       email: email,
-      u_password: encryptedPassword,
+      password: encryptedPassword,
       u_dob: u_dob,
       u_phoneNo: u_phoneNo,
+      accessToken: ""
     });
 
     await newusersDetails.save();

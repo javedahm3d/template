@@ -1,15 +1,17 @@
 require('dotenv/config')
 const express = require('express')
 const mongoose = require('mongoose');
+const cookieParser  = require('cookie-parser');
 mongoose.set('debug', true);
 const app = express();
+app.use(cookieParser())
 const PORT = process.env.PORT || 3001;
 const router = require('./routes');
 const bodyParser = require('body-parser')
 const cors = require('cors');
 
 const corsOptions = {
-  origin: 'http://localhost:3000',  // Set the origin to your frontend URL
+  origin: '*',  // Set the origin to your frontend URL
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,  // Enable credentials (cookies, authorization headers, etc.)
   optionsSuccessStatus: 204,

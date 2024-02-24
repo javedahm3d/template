@@ -35,7 +35,7 @@ export default async function Home(context) {
    
     <Layout>
       <div className="detailsPageConatiner">
-        <VillaImageSection imageList={data.villaImages}/>
+        <VillaImageSection imageList={imageList}/>
         <DateProvider>
           <div className="detailspagelowerbody">
             {/* in same directory */}
